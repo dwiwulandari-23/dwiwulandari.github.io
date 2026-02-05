@@ -2,82 +2,120 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Perpustakaan Dwi Wulandari</title>
+<title>Perpustakaan Dwi </title>
+
 <style>
 
 body {
     margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #fff9e6;
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #e9e1d3;
 }
 
-/* HERO */
-.hero {
-    background: linear-gradient(135deg, #ffe8a3, #ffd86b);
+/* HEADER */
+.header {
+    background: repeating-linear-gradient(
+        45deg,
+        #5b3a29,
+        #5b3a29 10px,
+        #6a4431 10px,
+        #6a4431 20px
+    );
+    color: #fff4dc;
     text-align: center;
-    padding: 80px 20px;
+    padding: 45px 20px;
+    border-bottom: 6px solid #d2b48c;
 }
 
-.hero h1 {
+.header h1 {
     margin: 0;
-    font-size: 42px;
-    color: #5a4300;
+    letter-spacing: 2px;
 }
 
-.hero p {
-    font-size: 18px;
-    color: #7a5a00;
-    margin-top: 10px;
+.header p {
+    margin-top: 8px;
+    font-size: 14px;
+    letter-spacing: 1px;
 }
 
-/* SECTION */
-.section {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.section h2 {
-    color: #5a4300;
-    margin-bottom: 40px;
-}
-
-/* CARD FITUR */
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-}
-
-.card {
-    background: #fffdf5;
-    width: 260px;
+/* WELCOME BOX */
+.welcome-box {
+    background: #f4eadc;
+    width: 60%;
+    margin: 40px auto;
     padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: 0.3s;
+    text-align: center;
+    border-radius: 14px;
+    border: 2px solid #c8a97e;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.welcome-box h2 {
+    margin-top: 0;
+    color: #5b3a29;
+}
+
+/* SECTION TITLE */
+.section-title {
+    text-align: center;
+    margin-top: 20px;
+    color: #5b3a29;
+    letter-spacing: 1px;
+}
+
+/* CARD AREA */
+.card-area {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 28px;
+    padding: 30px;
+}
+
+/* CARD */
+.card {
+    width: 220px;
+    padding: 22px;
+    border-radius: 18px;
+    background: repeating-linear-gradient(
+        135deg,
+        #f6eee2,
+        #f6eee2 8px,
+        #efe2d2 8px,
+        #efe2d2 16px
+    );
+    border: 2px solid #b08968;
+    text-align: center;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    transition: 0.25s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+}
+
+.icon {
+    font-size: 28px;
 }
 
 .card h3 {
-    margin: 10px 0;
-    color: #6b5200;
+    margin: 10px 0 6px;
+    color: #4a2f21;
+    font-size: 16px;
 }
 
 .card p {
-    font-size: 14px;
-    color: #7d6a2a;
+    font-size: 13px;
+    color: #5a4636;
 }
 
 /* FOOTER */
 .footer {
-    background: #ffe8a3;
+    background: linear-gradient(to right, #5b3a29, #7a523c);
+    color: #fff4dc;
     text-align: center;
-    padding: 20px;
-    color: #6b5200;
+    padding: 16px;
+    font-size: 13px;
     margin-top: 40px;
 }
 
@@ -86,53 +124,56 @@ body {
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-    <h1>Perpustakaan Dwi Wulandari</h1>
-    <p>Ruang literasi digital yang nyaman, hangat, dan inspiratif 📚</p>
+<!-- HEADER -->
+<div class="header">
+    <h1>PERPUSTAKAAN DWI</h1>
+    <p>Membaca • Memahami • Bertumbuh Bersama Ilmu</p>
 </div>
 
 <!-- WELCOME -->
-<div class="section">
+<div class="welcome-box">
     <h2>Selamat Datang</h2>
     <p>
-        Website perpustakaan ini menyediakan berbagai koleksi bacaan dan referensi 
-        untuk mendukung proses belajar, menambah wawasan, serta membangun budaya membaca.
+        Perpustakaan digital ini menyediakan koleksi bacaan dan referensi 
+        untuk mendukung proses pembelajaran, memperluas wawasan, 
+        serta menumbuhkan budaya literasi secara berkelanjutan.
     </p>
 </div>
 
 <!-- FITUR -->
-<div class="section">
-    <h2>Fitur Utama</h2>
+<h3 class="section-title">FITUR UTAMA</h3>
 
-    <div class="card-container">
+<div class="card-area">
 
-        <div class="card">
-            <h3>📘 Koleksi Buku</h3>
-            <p>Beragam koleksi buku dan referensi tersedia untuk menunjang kebutuhan belajar.</p>
-        </div>
-
-        <div class="card">
-            <h3>🔍 Pencarian Mudah</h3>
-            <p>Sistem pencarian sederhana agar informasi cepat ditemukan.</p>
-        </div>
-
-        <div class="card">
-            <h3>📋 Data Peminjaman</h3>
-            <p>Pencatatan peminjaman buku tertata dan mudah dipantau.</p>
-        </div>
-
-        <div class="card">
-            <h3>💡 Literasi</h3>
-            <p>Mendukung kegiatan literasi dan pengembangan minat baca.</p>
-        </div>
-
+    <div class="card">
+        <div class="icon">📘</div>
+        <h3>Katalog Buku</h3>
+        <p>Informasi koleksi buku tersusun rapi dan mudah ditelusuri.</p>
     </div>
+
+    <div class="card">
+        <div class="icon">📋</div>
+        <h3>Peminjaman</h3>
+        <p>Data peminjaman tercatat jelas dan terkontrol.</p>
+    </div>
+
+    <div class="card">
+        <div class="icon">💡</div>
+        <h3>Layanan Literasi</h3>
+        <p>Mendukung kegiatan edukasi dan pengembangan minat baca.</p>
+    </div>
+
+    <div class="card">
+        <div class="icon">🌐</div>
+        <h3>Akses Informasi</h3>
+        <p>Dapat diakses kapan saja dengan mudah.</p>
+    </div>
+
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-    © 2026 Perpustakaan Dwi Wulandari
+    © 2026 Perpustakaan Dwi Wulan Dari
 </div>
 
 </body>
