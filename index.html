@@ -2,121 +2,106 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Perpustakaan Dwi </title>
+<title>Perpustakaan Dwi</title>
 
 <style>
 
-body {
-    margin: 0;
-    font-family: Georgia, 'Times New Roman', serif;
-    background: #e9e1d3;
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #fff0f5, #ffe4ec);
+    color:#5a2a3a;
 }
 
-/* HEADER */
-.header {
-    background: repeating-linear-gradient(
-        45deg,
-        #5b3a29,
-        #5b3a29 10px,
-        #6a4431 10px,
-        #6a4431 20px
-    );
-    color: #fff4dc;
-    text-align: center;
-    padding: 45px 20px;
-    border-bottom: 6px solid #d2b48c;
+/* HERO HEADER */
+.hero{
+    text-align:center;
+    padding:70px 20px;
+    background: linear-gradient(135deg,#ff8fb1,#ffb3c7);
+    color:white;
 }
 
-.header h1 {
-    margin: 0;
-    letter-spacing: 2px;
+.hero h1{
+    margin:0;
+    font-size:42px;
+    letter-spacing:2px;
 }
 
-.header p {
-    margin-top: 8px;
-    font-size: 14px;
-    letter-spacing: 1px;
+.hero p{
+    margin:8px 0;
+    font-size:15px;
+    opacity:0.95;
 }
 
 /* WELCOME BOX */
-.welcome-box {
-    background: #f4eadc;
-    width: 60%;
-    margin: 40px auto;
-    padding: 25px;
-    text-align: center;
-    border-radius: 14px;
-    border: 2px solid #c8a97e;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+.welcome{
+    background:white;
+    width:65%;
+    margin:40px auto;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(255,105,140,0.25);
+    text-align:center;
 }
 
-.welcome-box h2 {
-    margin-top: 0;
-    color: #5b3a29;
+.welcome h2{
+    margin-top:0;
+    color:#c2185b;
 }
 
 /* SECTION TITLE */
-.section-title {
-    text-align: center;
-    margin-top: 20px;
-    color: #5b3a29;
-    letter-spacing: 1px;
+.section-title{
+    text-align:center;
+    margin-top:30px;
+    font-size:20px;
+    letter-spacing:1px;
+    color:#ad1457;
 }
 
-/* CARD AREA */
-.card-area {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 28px;
-    padding: 30px;
+/* CARD GRID */
+.cards{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
+    padding:30px;
 }
 
-/* CARD */
-.card {
-    width: 220px;
-    padding: 22px;
-    border-radius: 18px;
-    background: repeating-linear-gradient(
-        135deg,
-        #f6eee2,
-        #f6eee2 8px,
-        #efe2d2 8px,
-        #efe2d2 16px
-    );
-    border: 2px solid #b08968;
-    text-align: center;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-    transition: 0.25s;
+.card{
+    width:240px;
+    padding:24px;
+    border-radius:20px;
+    background:white;
+    box-shadow:0 8px 20px rgba(255,105,140,0.18);
+    transition:0.3s;
 }
 
-.card:hover {
-    transform: translateY(-6px);
+.card:hover{
+    transform:translateY(-8px) scale(1.03);
 }
 
-.icon {
-    font-size: 28px;
+.icon{
+    font-size:30px;
 }
 
-.card h3 {
-    margin: 10px 0 6px;
-    color: #4a2f21;
-    font-size: 16px;
+.card h3{
+    margin:12px 0 8px;
+    color:#c2185b;
 }
 
-.card p {
-    font-size: 13px;
-    color: #5a4636;
+.card p{
+    font-size:14px;
+    line-height:1.5;
 }
 
 /* FOOTER */
-.footer {
-    background: linear-gradient(to right, #5b3a29, #7a523c);
-    color: #fff4dc;
-    text-align: center;
-    padding: 16px;
-    font-size: 13px;
-    margin-top: 40px;
+.footer{
+    text-align:center;
+    padding:20px;
+    background: linear-gradient(135deg,#ff8fb1,#ffb3c7);
+    color:white;
+    font-size:13px;
+    margin-top:40px;
 }
 
 </style>
@@ -124,56 +109,76 @@ body {
 
 <body>
 
-<!-- HEADER -->
-<div class="header">
+<!-- HERO -->
+<div class="hero">
     <h1>PERPUSTAKAAN DWI</h1>
-    <p>Membaca • Memahami • Bertumbuh Bersama Ilmu</p>
+
+    <p>Menjelajah pengetahuan, menguatkan pemahaman, dan bertumbuh melalui literasi</p>
+    <p>Tempat membaca, belajar, dan berkembang bersama ilmu</p>
+    <p>Dari membaca menjadi mengerti — dari mengerti menjadi berkarya</p>
+    <p>Ruang literasi untuk membuka wawasan dan masa depan ✨</p>
 </div>
 
 <!-- WELCOME -->
-<div class="welcome-box">
-    <h2>Selamat Datang</h2>
+<div class="welcome">
+    <h2>SELAMAT DATANG DI PERPUSTAKAAN DWI</h2>
+
     <p>
-        Perpustakaan digital ini menyediakan koleksi bacaan dan referensi 
-        untuk mendukung proses pembelajaran, memperluas wawasan, 
-        serta menumbuhkan budaya literasi secara berkelanjutan.
+        Perpustakaan Dwi hadir sebagai pusat literasi modern yang menyediakan
+        beragam koleksi bacaan serta sumber referensi terpercaya untuk mendukung
+        proses pembelajaran. Kami berkomitmen membantu memperluas wawasan,
+        memperdalam pemahaman, dan menumbuhkan kebiasaan membaca secara
+        berkelanjutan di era digital.
     </p>
 </div>
 
 <!-- FITUR -->
-<h3 class="section-title">FITUR UTAMA</h3>
+<div class="section-title">FITUR UTAMA</div>
 
-<div class="card-area">
+<div class="cards">
 
     <div class="card">
         <div class="icon">📘</div>
         <h3>Katalog Buku</h3>
-        <p>Informasi koleksi buku tersusun rapi dan mudah ditelusuri.</p>
+        <p>
+            Koleksi buku tersusun sistematis dan terstruktur,
+            memudahkan pengguna menemukan bacaan yang dibutuhkan
+            dengan cepat dan tepat.
+        </p>
     </div>
 
     <div class="card">
-        <div class="icon">📋</div>
+        <div class="icon">📗</div>
         <h3>Peminjaman</h3>
-        <p>Data peminjaman tercatat jelas dan terkontrol.</p>
+        <p>
+            Setiap aktivitas peminjaman tercatat rapi dan dapat dipantau,
+            sehingga pengelolaan buku menjadi lebih tertib dan akurat.
+        </p>
     </div>
 
     <div class="card">
-        <div class="icon">💡</div>
+        <div class="icon">📕</div>
         <h3>Layanan Literasi</h3>
-        <p>Mendukung kegiatan edukasi dan pengembangan minat baca.</p>
+        <p>
+            Mendukung berbagai kegiatan literasi untuk meningkatkan
+            kemampuan belajar dan menumbuhkan minat baca pengguna.
+        </p>
     </div>
 
     <div class="card">
-        <div class="icon">🌐</div>
+        <div class="icon">📙</div>
         <h3>Akses Informasi</h3>
-        <p>Dapat diakses kapan saja dengan mudah.</p>
+        <p>
+            Informasi perpustakaan tersedia melalui berbagai media
+            agar sumber pengetahuan lebih mudah dijangkau kapan saja.
+        </p>
     </div>
 
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-    © 2026 Perpustakaan Dwi Wulan Dari
+    © 2026 Perpustakaan Dwi — Modern Digital Library
 </div>
 
 </body>
