@@ -13,10 +13,47 @@ body{
     color:#1f3a2e;
 }
 
+/* NAVIGASI */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 40px;
+    background:linear-gradient(to right,#0b5d1e,#4f7f49);
+}
+
+.navbar h2{
+    margin:0;
+    color:white;
+    letter-spacing:1px;
+}
+
+.navbar ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    gap:22px;
+}
+
+.navbar ul li a{
+    text-decoration:none;
+    color:white;
+    font-size:14px;
+    padding:8px 16px;
+    border-radius:18px;
+    transition:0.3s;
+}
+
+.navbar ul li a:hover{
+    background:white;
+    color:#1f3a2e;
+}
+
 /* HEADER */
 .hero{
     background: linear-gradient(180deg,#0b5d1e,#4f7f49,#b7b07a,#ded1ad);
-    padding:70px 20px;
+    padding:60px 20px;
     text-align:center;
     border-bottom-left-radius:30px;
     border-bottom-right-radius:30px;
@@ -29,13 +66,7 @@ body{
     letter-spacing:2px;
 }
 
-.hero p{
-    color:#f3f6e9;
-    font-size:15px;
-    margin:6px 0;
-}
-
-/* WELCOME BOX */
+/* WELCOME */
 .welcome{
     background:white;
     width:65%;
@@ -51,7 +82,7 @@ body{
     color:#2e5b3f;
 }
 
-/* TITLE */
+/* SECTION TITLE */
 .section-title{
     text-align:center;
     font-size:20px;
@@ -88,46 +119,53 @@ body{
     font-size:30px;
 }
 
-.card h3{
-    margin:12px 0 8px;
-    color:#1f3a2e;
-}
-
-.card p{
-    font-size:14px;
-    line-height:1.5;
-    color:#3b5a4b;
-}
-
 /* FOOTER */
 .footer{
-    text-align:center;
-    padding:26px 22px;
-    margin-top:40px;
-    background: linear-gradient(to right,#0b5d1e,#4f7f49);
+    background:linear-gradient(to right,#0b5d1e,#4f7f49);
     color:white;
-    font-size:13px;
+    padding:40px 20px;
+    margin-top:50px;
 }
 
-.footer-links{
-    margin-top:10px;
+.footer-content{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    gap:30px;
 }
 
-.footer-links a{
-    display:inline-block;
-    margin:6px 10px;
-    padding:8px 16px;
-    border-radius:20px;
-    background:rgba(255,255,255,0.15);
-    color:#ffffff;
+.footer h3{
+    margin-top:0;
+}
+
+.footer a{
+    color:#eaf3e3;
     text-decoration:none;
-    font-size:13px;
-    transition:0.3s;
 }
 
-.footer-links a:hover{
-    background:#ffffff;
-    color:#1f3a2e;
+.footer a:hover{
+    text-decoration:underline;
+}
+
+/* FEEDBACK BUTTON */
+.feedback-btn{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    background:linear-gradient(135deg,#0b5d1e,#7aa874);
+    color:white;
+    padding:14px 22px;
+    border-radius:30px;
+    text-decoration:none;
+    font-size:14px;
+    box-shadow:0 10px 22px rgba(0,0,0,0.25);
+    transition:0.3s;
+    z-index:1000;
+}
+
+.feedback-btn:hover{
+    transform:scale(1.1);
+    background:linear-gradient(135deg,#7aa874,#0b5d1e);
 }
 
 </style>
@@ -135,98 +173,80 @@ body{
 
 <body>
 
-<!-- HEADER -->
-<div class="hero">
+<!-- NAVIGASI -->
+<div class="navbar">
+    <h2>Perpustakaan Dwi</h2>
+    <ul>
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#koleksi">Koleksi</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="login.html" target="_blank">Login</a></li>
+        <li><a href="daftar.html" target="_blank">Daftar</a></li>
+    </ul>
+</div>
+
+<!-- BERANDA -->
+<div id="beranda" class="hero">
     <h1>PERPUSTAKAAN DWI</h1>
 </div>
 
-<!-- WELCOME -->
 <div class="welcome">
-    <h2>SELAMAT DATANG DI PERPUSTAKAAN DWI</h2>
-
-    <p>
-        Perpustakaan Dwi hadir sebagai pusat literasi yang menyediakan
-        beragam koleksi bacaan dan sumber referensi untuk menunjang proses belajar.
-        Kami berkomitmen membantu memperluas pengetahuan, meningkatkan pemahaman,
-        serta menumbuhkan kebiasaan membaca secara berkelanjutan.
-    </p>
+    <h2>SELAMAT DATANG</h2>
+    <p>Perpustakaan Dwi adalah pusat literasi digital yang mendukung pembelajaran dan pengembangan pengetahuan.</p>
 </div>
 
-<!-- FITUR -->
-<div class="section-title">FITUR UTAMA</div>
+<!-- KOLEKSI -->
+<div id="koleksi" class="section-title">KOLEKSI BUKU</div>
 
 <div class="cards">
-
     <div class="card">
         <div class="icon">📘</div>
         <h3>Katalog Buku</h3>
-        <p>
-            Kumpulan koleksi buku tersusun rapi dan sistematis
-            sehingga pengguna dapat menemukan bacaan yang dibutuhkan
-            dengan lebih cepat.
-        </p>
+        <p>Koleksi buku tersusun rapi dan mudah dicari.</p>
     </div>
-
     <div class="card">
         <div class="icon">📗</div>
         <h3>Peminjaman</h3>
-        <p>
-            Seluruh aktivitas peminjaman tercatat dan dapat dipantau
-            dengan jelas untuk memastikan pengelolaan tetap tertib
-            dan akurat.
-        </p>
+        <p>Sistem peminjaman yang tertib dan terdata.</p>
     </div>
-
-    <div class="card">
-        <div class="icon">📕</div>
-        <h3>Layanan Literasi</h3>
-        <p>
-            Menyediakan dukungan kegiatan literasi untuk meningkatkan
-            kemampuan belajar dan menumbuhkan minat membaca pengguna.
-        </p>
-    </div>
-
-    <div class="card">
-        <div class="icon">📙</div>
-        <h3>Akses Informasi</h3>
-        <p>
-            Informasi perpustakaan dapat diakses melalui berbagai media
-            agar sumber pengetahuan lebih mudah diperoleh.
-        </p>
-    </div>
-
 </div>
 
-<!-- AUDIO & VIDEO -->
-<div class="welcome">
-    <h2>MEDIA AUDIO & VIDEO</h2>
-
-    <p>Audio relaksasi sebelum melakukan pembelajaran web dapat didengarkan di bawah ini.</p>
+<!-- MEDIA -->
+<div id="media" class="welcome">
+    <h2>AUDIO & VIDEO KOLEKSI</h2>
 
     <audio controls style="width:80%; margin:15px 0;">
         <source src="LesungPipi_Audio.mp3" type="audio/mp3">
-        Browser ini tidak mendukung audio
     </audio>
 
-    <p>Musik telah selesai didengarkan. Selanjutnya, selamat belajar!</p>
-
-    <video controls width="80%" style="border-radius:18px; box-shadow:0 10px 22px rgba(0,0,0,0.12); margin-top:15px;">
+    <video controls width="80%" style="border-radius:18px; margin-top:15px;">
         <source src="BelajarWeb.mp4" type="video/mp4">
-        Browser ini tidak mendukung video
     </video>
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-    <p>© 2026 Perpustakaan Dwi — Digital Green Library</p>
-    <p>
-        Dibuat oleh <strong>Dwi Wulan Dari</strong>
-    </p>
-    <div class="footer-links">
-        <a href="cv.html" target="_blank">Curriculum Vitae</a>
-        <a href="https://www.youtube.com/watch?v=NBZ9Ro6UKV8&list=PLFIM0718LjIVuONHysfOK0ZtiqUWvrx4F" target="_blank">YouTube</a>
+    <div class="footer-content">
+
+        <div>
+            <h3>Tentang</h3>
+            <p><a href="cv.html" target="_blank">Curriculum Vitae Pemilik</a></p>
+            <p><a href="https://www.youtube.com/watch?v=NBZ9Ro6UKV8&list=PLFIM0718LjIVuONHysfOK0ZtiqUWvrx4F" target="_blank">YouTube</a></p>
+        </div>
+
+        <div>
+            <h3>Kontak</h3>
+            <p>📍 Medan, Sumatera Utara</p>
+            <p>📧 dwiw59866@gmail.com</p>
+            <p>📞 083857736265</p>
+            <p><a href="https://instagram.com/" target="_blank">Instagram</a></p>
+        </div>
+
     </div>
 </div>
+
+<!-- FEEDBACK -->
+<a href="feedback.html" target="_blank" class="feedback-btn">💬 Feedback</a>
 
 </body>
 </html>
