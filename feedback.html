@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Feedback | Perpustakaan Dwi</title>
+
+<style>
+body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Segoe UI', sans-serif;
+    background:linear-gradient(to bottom,#eef5ec,#e3ecd9);
+}
+
+/* BACK BUTTON */
+.back{
+    position:absolute;
+    top:25px;
+    left:30px;
+    font-size:22px;
+    text-decoration:none;
+    color:#0b5d1e;
+    font-weight:bold;
+    transition:0.3s;
+}
+.back:hover{
+    transform:translateX(-6px);
+}
+
+/* FEEDBACK BOX */
+.box{
+    width:420px;
+    background:white;
+    padding:36px;
+    border-radius:22px;
+    box-shadow:0 14px 32px rgba(0,0,0,0.15);
+    text-align:center;
+}
+
+.box h2{
+    margin-top:0;
+    color:#2e5b3f;
+}
+
+.box p{
+    font-size:14px;
+    color:#3b5a4b;
+}
+
+/* INPUT */
+input, textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border-radius:14px;
+    border:1px solid #ccd7c8;
+    font-size:14px;
+    outline:none;
+    resize:none;
+}
+
+input:focus, textarea:focus{
+    border-color:#0b5d1e;
+}
+
+/* BUTTON */
+button{
+    width:100%;
+    padding:13px;
+    margin-top:14px;
+    border:none;
+    border-radius:22px;
+    background:linear-gradient(to right,#0b5d1e,#4f7f49);
+    color:white;
+    font-size:15px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.06);
+    background:linear-gradient(to right,#4f7f49,#0b5d1e);
+}
+</style>
+</head>
+
+<body>
+
+<a href="index.html" class="back">←</a>
+
+<div class="box">
+    <h2>Feedback & Saran</h2>
+    <p>Kami menghargai setiap masukan untuk meningkatkan kualitas layanan perpustakaan.</p>
+
+    <form onsubmit="kirimFeedback(event)">
+        <input type="text" placeholder="Nama (Opsional)">
+        <input type="email" placeholder="Email (Opsional)">
+        <textarea rows="5" placeholder="Tulis saran atau kritik Anda..." required></textarea>
+        <button type="submit">Kirim Feedback</button>
+    </form>
+</div>
+
+<script>
+function kirimFeedback(e){
+    e.preventDefault();
+    alert("Terima Kasih atas Feedback Anda");
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
