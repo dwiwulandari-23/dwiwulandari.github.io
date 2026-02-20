@@ -4,13 +4,22 @@
 <meta charset="UTF-8">
 <title>Perpustakaan Dwi</title>
 
+<!-- GOOGLE FONT POPPINS -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
+
+/* SEMUA TEXT GLOBAL */
+*{
+    font-family:'Poppins', sans-serif;
+}
 
 body{
     margin:0;
-    font-family:'Segoe UI', sans-serif;
     background: linear-gradient(to bottom,#eef5ec,#e3ecd9);
     color:#1f3a2e;
+    line-height:1.7;
+    font-weight:400;
 }
 
 /* NAVIGASI */
@@ -26,6 +35,7 @@ body{
     margin:0;
     color:white;
     letter-spacing:1px;
+    font-weight:700;
 }
 
 .navbar ul{
@@ -39,10 +49,11 @@ body{
 .navbar ul li a{
     text-decoration:none;
     color:white;
-    font-size:14px;
+    font-size:15px;
     padding:8px 16px;
     border-radius:18px;
     transition:0.3s;
+    font-weight:500;
 }
 
 .navbar ul li a:hover{
@@ -53,42 +64,39 @@ body{
 /* HEADER */
 .hero{
     background: linear-gradient(180deg,#0b5d1e,#4f7f49,#b7b07a,#ded1ad);
-    padding:60px 20px;
+    padding:120px 20px;
     text-align:center;
     border-bottom-left-radius:30px;
     border-bottom-right-radius:30px;
+    color:white;
 }
 
 .hero h1{
     margin:0;
-    color:white;
     font-size:42px;
+    font-weight:700;
     letter-spacing:2px;
 }
 
-/* WELCOME */
-.welcome{
-    background:white;
-    width:65%;
-    margin:40px auto;
-    padding:32px;
-    border-radius:20px;
-    box-shadow:0 12px 30px rgba(0,0,0,0.12);
-    text-align:center;
-}
-
-.welcome h2{
-    margin-top:0;
-    color:#2e5b3f;
+.hero-subtitle{
+    margin-top:18px;
+    font-size:18px;
+    font-weight:300;
+    max-width:700px;
+    margin-left:auto;
+    margin-right:auto;
+    line-height:1.8;
+    color:#f2f6f0;
 }
 
 /* SECTION TITLE */
 .section-title{
     text-align:center;
-    font-size:20px;
-    margin-top:30px;
+    font-size:24px;
+    margin-top:40px;
     color:#2e5b3f;
     letter-spacing:1px;
+    font-weight:600;
 }
 
 /* CARDS */
@@ -108,6 +116,7 @@ body{
     box-shadow:0 10px 22px rgba(0,0,0,0.10);
     transition:0.3s;
     border:1px solid #e2e6d8;
+    text-align:center;
 }
 
 .card:hover{
@@ -115,8 +124,34 @@ body{
     box-shadow:0 16px 30px rgba(0,0,0,0.15);
 }
 
+.card h3{
+    font-weight:600;
+    margin-top:10px;
+}
+
+.card p{
+    font-size:14px;
+}
+
 .icon{
     font-size:30px;
+}
+
+/* MEDIA */
+.welcome{
+    background:white;
+    width:65%;
+    margin:40px auto;
+    padding:32px;
+    border-radius:20px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.12);
+    text-align:center;
+}
+
+.welcome h2{
+    margin-top:0;
+    color:#2e5b3f;
+    font-weight:600;
 }
 
 /* FOOTER */
@@ -125,6 +160,7 @@ body{
     color:white;
     padding:40px 20px;
     margin-top:50px;
+    font-size:14px;
 }
 
 .footer-content{
@@ -136,6 +172,7 @@ body{
 
 .footer h3{
     margin-top:0;
+    font-weight:600;
 }
 
 .footer a{
@@ -158,6 +195,7 @@ body{
     border-radius:30px;
     text-decoration:none;
     font-size:14px;
+    font-weight:500;
     box-shadow:0 10px 22px rgba(0,0,0,0.25);
     transition:0.3s;
     z-index:1000;
@@ -173,7 +211,6 @@ body{
 
 <body>
 
-<!-- NAVIGASI -->
 <div class="navbar">
     <h2>Perpustakaan Dwi</h2>
     <ul>
@@ -185,17 +222,13 @@ body{
     </ul>
 </div>
 
-<!-- BERANDA -->
 <div id="beranda" class="hero">
-    <h1>PERPUSTAKAAN DWI</h1>
+    <h1>SELAMAT DATANG DI PERPUSTAKAAN DWI</h1>
+    <p class="hero-subtitle">
+        Pusat literasi digital berbasis Web OPAC yang mempermudah akses informasi dan penelusuran koleksi perpustakaan.
+    </p>
 </div>
 
-<div class="welcome">
-    <h2>SELAMAT DATANG</h2>
-    <p>Perpustakaan Dwi adalah pusat literasi digital yang mendukung pembelajaran dan pengembangan pengetahuan.</p>
-</div>
-
-<!-- KOLEKSI -->
 <div id="koleksi" class="section-title">KOLEKSI BUKU</div>
 
 <div class="cards">
@@ -211,7 +244,6 @@ body{
     </div>
 </div>
 
-<!-- MEDIA -->
 <div id="media" class="welcome">
     <h2>AUDIO & VIDEO KOLEKSI</h2>
 
@@ -224,14 +256,13 @@ body{
     </video>
 </div>
 
-<!-- FOOTER -->
 <div class="footer">
-    <div class="footer-content">
+ <div class="footer-content">
 
         <div>
             <h3>Tentang</h3>
             <p><a href="cv.html" target="_blank">Curriculum Vitae Pemilik</a></p>
-            <p><a href="https://www.youtube.com/watch?v=NBZ9Ro6UKV8&list=PLFIM0718LjIVuONHysfOK0ZtiqUWvrx4F" target="_blank">YouTube</a></p>
+            <p><a href="https://www.youtube.com" target="_blank">YouTube</a></p>
         </div>
 
         <div>
@@ -239,13 +270,12 @@ body{
             <p>📍 Medan, Sumatera Utara</p>
             <p>📧 dwiw59866@gmail.com</p>
             <p>📞 083857736265</p>
-            <p><a href="https://www.instagram.com/_dwiwulandari22?utm_source=qr&igsh=NXY2bXR5anAyN2g=" target="_blank">Instagram</a></p>
+            <p><a href="https://www.instagram.com" target="_blank">Instagram</a></p>
         </div>
 
     </div>
 </div>
 
-<!-- FEEDBACK -->
 <a href="feedback.html" target="_blank" class="feedback-btn">💬 Feedback</a>
 
 </body>
