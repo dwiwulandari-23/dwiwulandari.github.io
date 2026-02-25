@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>LUMORA LIBRARY</title>
 
-<!-- GOOGLE FONT POPPINS -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -54,10 +53,11 @@ body{
 .logo-area img:hover{
     transform:scale(1.05);
 }
+
 .logo-area h2{
     font-size:18px;
     margin:0;
-	color:white;
+    color:white;
 }
 
 /* MENU */
@@ -84,7 +84,7 @@ body{
     color:#1f3a2e;
 }
 
-/* HEADER */
+/* HERO */
 .hero{
     background: linear-gradient(180deg,#0b5d1e,#4f7f49,#b7b07a,#ded1ad);
     padding:120px 20px;
@@ -118,7 +118,7 @@ body{
     font-weight:600;
 }
 
-/* CARDS CONTAINER */
+/* CARDS */
 .cards{
     display:flex;
     flex-wrap:wrap;
@@ -127,7 +127,6 @@ body{
     padding:40px 20px;
 }
 
-/* CARD */
 .card{
     width:250px;
     padding:24px;
@@ -163,6 +162,23 @@ body{
     text-align:center;
 }
 
+/* BUTTON KEMBALI */
+.back-btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:10px 20px;
+    background:#0b5d1e;
+    color:white;
+    text-decoration:none;
+    border-radius:20px;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:#2f5f2b;
+}
+
 /* FOOTER */
 .footer{
     background:linear-gradient(to right,#0b5d1e,#4f7f49);
@@ -188,7 +204,7 @@ body{
     text-decoration:underline;
 }
 
-/* FEEDBACK BUTTON */
+/* FEEDBACK */
 .feedback-btn{
     position:fixed;
     bottom:30px;
@@ -222,8 +238,11 @@ body{
 
     <ul>
         <li><a href="#beranda">Beranda</a></li>
+        <li><a href="profil.html" target="_blank">Profil</a></li>
+        <li><a href="layanan.html" target="_blank">Layanan</a></li>
         <li><a href="#koleksi">Koleksi</a></li>
         <li><a href="#media">Media</a></li>
+        <li><a href="tentang.html" target="_blank">Tentang</a></li>
         <li><a href="login.html" target="_blank">Login</a></li>
         <li><a href="daftar.html" target="_blank">Daftar</a></li>
     </ul>
@@ -241,7 +260,6 @@ body{
 <div id="koleksi" class="section-title">KOLEKSI BUKU</div>
 
 <div class="cards">
-
     <div class="card">
         <div class="icon">📘</div>
         <h3>Katalog Buku</h3>
@@ -265,7 +283,6 @@ body{
         <h3>Akses Informasi</h3>
         <p>Informasi perpustakaan dapat diakses melalui berbagai media digital.</p>
     </div>
-
 </div>
 
 <!-- MEDIA -->
@@ -279,9 +296,12 @@ body{
     <video controls width="80%" style="border-radius:18px; margin-top:15px;">
         <source src="BelajarWeb.mp4" type="video/mp4">
     </video>
+
+    <br>
+    <a href="#beranda" class="back-btn">⬅ Kembali ke Menu Utama</a>
 </div>
 
-<!-- FOOTER -->
+<!-- FOOTER tetap sama -->
 <div class="footer">
     <div class="footer-content">
         <div>
@@ -296,6 +316,13 @@ body{
             <p>📧 dwiw59866@gmail.com</p>
             <p>📞 083857736265</p>
             <p><a href="https://www.instagram.com" target="_blank">Instagram</a></p>
+        </div>
+
+        <div>
+            <h3>Jam Operasional Layanan</h3>
+            <p>Senin-Jumat : 08:00-19:00 WIB</p>
+            <p>Sabtu : 09:00-17:00 WIB</p>
+            <p>Minggu & Libur Nasional : Tutup</p>
         </div>
     </div>
 </div>
