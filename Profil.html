@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Profil - Arunika Pustaka</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Segoe UI",sans-serif;
+    line-height:1.8;
+    background:linear-gradient(135deg,#e8f0ec,#f4f6f9);
+    color:#2d3a34;
+}
+
+.back-button{
+    position:fixed;
+    top:25px;
+    left:10px; /* digeser lebih ke kiri */
+    background:white;
+    color:#2f5f2b;
+    padding:8px 16px; /* ukuran sama seperti layanan.html */
+    border-radius:30px;
+    text-decoration:none;
+    font-size:13px; /* disamakan */
+    font-weight:500;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    transition:0.3s ease;
+    z-index:1000;
+}
+
+.back-button:hover{
+    background:#2f5f2b;
+    color:white;
+    transform:translateY(-3px);
+}
+
+.container{
+    max-width:950px;
+    margin:60px auto;
+    background:white;
+    padding:50px;
+    border-radius:18px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+    position:relative;
+    overflow:hidden;
+}
+
+/* efek dekoratif halus */
+.container::before{
+    content:"";
+    position:absolute;
+    top:-80px;
+    right:-80px;
+    width:200px;
+    height:200px;
+    background:linear-gradient(135deg,#0f4c2c,#4f7f49);
+    border-radius:50%;
+    opacity:0.05;
+}
+
+h1{
+    color:#0f4c2c;
+    margin-bottom:25px;
+    font-size:32px;
+    font-weight:700;
+    border-bottom:3px solid #e5ece7;
+    padding-bottom:10px;
+}
+
+/* SUBJUDUL LEBIH MENARIK */
+h2{
+    margin-top:45px;
+    margin-bottom:15px;
+    font-size:22px;
+    font-weight:600;
+    color:#1b5e3a;
+    position:relative;
+    padding-left:18px;
+}
+
+h2::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:8px;
+    width:6px;
+    height:22px;
+    background:linear-gradient(to bottom,#0f4c2c,#7aa874);
+    border-radius:3px;
+}
+
+p{
+    margin-bottom:18px;
+    text-align:justify;
+    color:#444;
+}
+
+ul{
+    margin-top:10px;
+    padding-left:25px;
+}
+
+ul li{
+    margin-bottom:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Tombol kembali versi baru -->
+<a href="index.html" class="back-button">← Kembali ke Beranda</a>
+
+<div class="container">
+
+<h1>Profil Perpustakaan Arunika Pustaka</h1>
+
+<p>
+Arunika Pustaka merupakan pusat sumber informasi dan literasi yang hadir sebagai ruang belajar, ruang bertumbuh, dan ruang berkarya bagi seluruh pemustaka. Perpustakaan ini menyediakan berbagai koleksi buku cetak, referensi, serta layanan informasi yang mendukung kebutuhan akademik maupun pengembangan diri.
+</p>
+
+<p>
+Dengan suasana yang nyaman, pelayanan yang ramah, dan sistem pengelolaan yang tertata, Arunika Pustaka berkomitmen menjadi tempat yang tidak hanya menyediakan bahan bacaan, tetapi juga membangun budaya literasi dan semangat belajar sepanjang hayat.
+</p>
+
+<h2>Sejarah Perkembangan</h2>
+
+<p>
+Arunika Pustaka didirikan dengan tujuan untuk meningkatkan minat baca serta mendukung kegiatan pembelajaran di lingkungan pendidikan. Berawal dari koleksi sederhana dan ruang baca yang terbatas, perpustakaan ini terus berkembang baik dari segi jumlah koleksi, fasilitas, maupun sistem pelayanannya.
+</p>
+
+<p>
+Seiring perkembangan teknologi informasi, Arunika Pustaka mulai memanfaatkan sistem pengelolaan berbasis digital guna mempermudah proses pencarian, peminjaman, dan pengembalian koleksi. Perubahan ini dilakukan sebagai bentuk komitmen dalam memberikan layanan yang efektif, efisien, dan modern kepada para pemustaka.
+</p>
+
+<h2 id="visi">Visi</h2>
+
+<p><i>“Menjadi pusat informasi dan literasi yang unggul, inovatif, serta mendukung terciptanya generasi pembelajar yang cerdas, kreatif, dan berkarakter.”</i></p>
+
+<h2>Misi</h2>
+
+<ul>
+<li>Menyediakan koleksi bahan pustaka yang relevan, berkualitas, dan sesuai dengan kebutuhan pemustaka.</li>
+<li>Memberikan layanan informasi yang cepat, tepat, dan ramah.</li>
+<li>Mengembangkan sistem pengelolaan perpustakaan berbasis teknologi informasi.</li>
+<li>Meningkatkan budaya literasi melalui berbagai kegiatan edukatif dan kreatif.</li>
+<li>Menciptakan lingkungan perpustakaan yang nyaman, tertib, dan inspiratif.</li>
+</ul>
+
+</div>
+
+</body>
+</html>
