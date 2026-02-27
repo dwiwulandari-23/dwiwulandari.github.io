@@ -5,8 +5,13 @@
 <title>Feedback | Perpustakaan Dwi</title>
 
 <style>
-body{
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
     min-height:100vh;
     display:flex;
     justify-content:center;
@@ -15,22 +20,30 @@ body{
     background:linear-gradient(to bottom,#eef5ec,#e3ecd9);
 }
 
-/* BACK BUTTON */
-.back{
-    position:absolute;
+/* ===== TOMBOL KEMBALI (DISAMAKAN DENGAN LOGIN & LAYANAN) ===== */
+.back-btn{
+    position:fixed;
     top:25px;
-    left:30px;
-    font-size:22px;
+    left:10px; /* lebih ke kiri agar tidak mengganggu isi */
+    background:white;
+    color:#2f5f2b;
+    padding:8px 16px;
+    border-radius:30px;
     text-decoration:none;
-    color:#0b5d1e;
-    font-weight:bold;
-    transition:0.3s;
-}
-.back:hover{
-    transform:translateX(-6px);
+    font-size:13px;
+    font-weight:500;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    transition:0.3s ease;
+    z-index:1000;
 }
 
-/* FEEDBACK BOX */
+.back-btn:hover{
+    background:#2f5f2b;
+    color:white;
+    transform:translateY(-3px);
+}
+
+/* ===== FEEDBACK BOX ===== */
 .box{
     width:420px;
     background:white;
@@ -42,15 +55,17 @@ body{
 
 .box h2{
     margin-top:0;
+    margin-bottom:10px;
     color:#2e5b3f;
 }
 
 .box p{
     font-size:14px;
     color:#3b5a4b;
+    margin-bottom:15px;
 }
 
-/* INPUT */
+/* ===== INPUT ===== */
 input, textarea{
     width:100%;
     padding:12px;
@@ -66,7 +81,7 @@ input:focus, textarea:focus{
     border-color:#0b5d1e;
 }
 
-/* BUTTON */
+/* ===== BUTTON ===== */
 button{
     width:100%;
     padding:13px;
@@ -81,15 +96,15 @@ button{
 }
 
 button:hover{
-    transform:scale(1.06);
-    background:linear-gradient(to right,#4f7f49,#0b5d1e);
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
 }
 </style>
 </head>
 
 <body>
 
-<a href="index.html" class="back">←</a>
+<a href="index.html" class="back-btn">← Kembali</a>
 
 <div class="box">
     <h2>Feedback & Saran</h2>
