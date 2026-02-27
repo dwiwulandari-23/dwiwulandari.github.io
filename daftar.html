@@ -12,31 +12,41 @@ body{
     justify-content:center;
     align-items:center;
     font-family:'Segoe UI', sans-serif;
-    background:linear-gradient(to bottom,#eef5ec,#e3ecd9);
+    background:linear-gradient(135deg,#0f4c2c,#4f7f49,#9ac7a2);
 }
 
-/* BACK BUTTON */
-.back{
-    position:absolute;
+/* BACK BUTTON (SAMA DENGAN LAYANAN.HTML) */
+.back-btn{
+    position:fixed;
     top:25px;
-    left:30px;
-    font-size:22px;
+    left:5px; /* digeser sedikit lebih kiri lagi */
+    background:white;
+    color:#2f5f2b;
+    padding:8px 16px;
+    border-radius:30px;
     text-decoration:none;
-    color:#0b5d1e;
-    font-weight:bold;
-    transition:0.3s;
+    font-size:13px;
+    font-weight:500;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    transition:0.3s ease;
+    z-index:1000;
 }
-.back:hover{
-    transform:translateX(-5px);
+
+.back-btn:hover{
+    background:#2f5f2b;
+    color:white;
+    transform:translateY(-3px);
 }
 
 /* REGISTER BOX */
 .box{
     width:420px;
-    background:white;
-    padding:36px;
-    border-radius:22px;
-    box-shadow:0 14px 32px rgba(0,0,0,0.15);
+    background:rgba(255,255,255,0.95);
+    padding:45px 36px;
+    border-radius:28px;
+    box-shadow:0 20px 45px rgba(0,0,0,0.25);
+    backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,0.3);
 }
 
 .box h2{
@@ -64,13 +74,12 @@ input:focus{
     border-color:#0b5d1e;
 }
 
-/* BUTTON */
 button{
     width:100%;
-    padding:13px;
-    margin-top:16px;
+    padding:14px;
+    margin-top:18px;
     border:none;
-    border-radius:22px;
+    border-radius:14px;
     background:linear-gradient(to right,#0b5d1e,#4f7f49);
     color:white;
     font-size:15px;
@@ -79,14 +88,15 @@ button{
 }
 
 button:hover{
-    transform:scale(1.05);
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
 }
 </style>
 </head>
 
 <body>
 
-<a href="index.html" class="back">←</a>
+<a href="index.html" class="back-btn">← Kembali</a>
 
 <div class="box">
     <h2>Daftar Akun</h2>
