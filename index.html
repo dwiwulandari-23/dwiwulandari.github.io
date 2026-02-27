@@ -2,329 +2,398 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>LUMORA LIBRARY</title>
+<title>ARUNIKA PUSTAKA</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* GLOBAL FONT */
-*{
-    font-family:'Poppins', sans-serif;
-    box-sizing:border-box;
-}
+/* ===== CSS ASLI TIDAK DIUBAH ===== */
+*{font-family:'Poppins', sans-serif;box-sizing:border-box;}
+body{margin:0;background:linear-gradient(to bottom,#eef5ec,#e3ecd9);color:#1f3a2e;line-height:1.7;}
 
-body{
-    margin:0;
-    background: linear-gradient(to bottom,#eef5ec,#e3ecd9);
-    color:#1f3a2e;
-    line-height:1.7;
-}
-
-/* NAVBAR */
 .navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:8px 50px;
-    height:70px;
-    background:linear-gradient(to right,#063d14,#2f5f2b);
-    border-bottom:3px solid rgba(255,255,255,0.15);
+display:flex;justify-content:space-between;align-items:center;
+padding:8px 50px;height:70px;
+background:linear-gradient(to right,#063d14,#2f5f2b);
+border-bottom:3px solid rgba(255,255,255,0.15);
 }
 
-/* LOGO AREA */
-.logo-area{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
+.logo-area{display:flex;align-items:center;gap:12px;}
 .logo-area img{
-    width:50px;
-    height:50px;
-    object-fit:contain;
-    background:white;
-    padding:6px;
-    border-radius:50%;
-    box-shadow:0 4px 10px rgba(0,0,0,0.2);
-    transition:0.3s;
+width:50px;height:50px;object-fit:contain;background:white;
+padding:6px;border-radius:50%;box-shadow:0 4px 10px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+.logo-area img:hover{transform:scale(1.05);}
+.logo-area h2{font-size:18px;margin:0;color:white;}
+
+.navbar ul{list-style:none;margin:0;padding:0;display:flex;gap:22px;}
+.navbar ul li{position:relative;}
+.navbar ul li>a{
+color:white;text-decoration:none;font-weight:600;
+transition:0.3s ease;padding-bottom:6px;
 }
 
-.logo-area img:hover{
-    transform:scale(1.05);
+.navbar ul li::after{
+content:"";position:absolute;left:0;bottom:-22px;
+width:0%;height:3px;background:#f4c430;transition:0.3s ease;
 }
+.navbar ul li:hover::after{width:100%;}
 
-.logo-area h2{
-    font-size:18px;
-    margin:0;
-    color:white;
+.dropdown{
+position:absolute;top:55px;left:50%;
+transform:translateX(-50%) translateY(10px);
+background:linear-gradient(135deg,#ffffff,#f3f7f2);
+min-width:220px;border-radius:15px;
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
+padding:10px 0;opacity:0;visibility:hidden;
+transition:all 0.3s ease;z-index:999;
 }
-
-/* MENU */
-.navbar ul{
-    list-style:none;
-    margin:0;
-    padding:0;
-    display:flex;
-    gap:22px;
+.dropdown::before{
+content:"";position:absolute;top:-8px;left:50%;
+transform:translateX(-50%);
+border-width:8px;border-style:solid;
+border-color:transparent transparent #ffffff transparent;
 }
-
-.navbar ul li a{
-    text-decoration:none;
-    color:white;
-    font-size:15px;
-    padding:8px 16px;
-    border-radius:18px;
-    transition:0.3s;
-    font-weight:500;
+.dropdown a{
+display:block;padding:12px 20px;font-size:15px;
+font-weight:500;color:#1f3a2e;text-decoration:none;
+transition:all 0.3s ease;
 }
-
-.navbar ul li a:hover{
-    background:white;
-    color:#1f3a2e;
+.dropdown a:hover{background:#1f3a2e;color:white;padding-left:25px;}
+.navbar ul li:hover .dropdown{
+opacity:1;visibility:visible;
+transform:translateX(-50%) translateY(0);
 }
 
 /* HERO */
 .hero{
-    background: linear-gradient(180deg,#0b5d1e,#4f7f49,#b7b07a,#ded1ad);
-    padding:120px 20px;
-    text-align:center;
-    border-bottom-left-radius:30px;
-    border-bottom-right-radius:30px;
-    color:white;
+background:linear-gradient(180deg,#0b5d1e,#4f7f49,#b7b07a,#ded1ad);
+padding:120px 20px;text-align:center;
+border-bottom-left-radius:30px;border-bottom-right-radius:30px;
+color:white;
 }
-
-.hero h1{
-    margin:0;
-    font-size:42px;
-    font-weight:700;
-}
-
+.hero h1{margin:0;font-size:42px;font-weight:700;}
 .hero-subtitle{
-    margin-top:18px;
-    font-size:18px;
-    font-weight:300;
-    max-width:700px;
-    margin-left:auto;
-    margin-right:auto;
-    line-height:1.8;
+margin-top:18px;font-size:18px;font-weight:300;
+max-width:700px;margin-left:auto;margin-right:auto;line-height:1.8;
 }
 
-/* SECTION TITLE */
-.section-title{
-    text-align:center;
-    font-size:24px;
-    margin-top:40px;
-    font-weight:600;
-}
+.section-title{text-align:center;font-size:24px;margin-top:40px;font-weight:600;}
 
-/* CARDS */
+/* ===== AESTHETIC SCHOOL LIBRARY STYLE ===== */
+
 .cards{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:26px;
-    padding:40px 20px;
+display:flex;
+justify-content:center;
+gap:45px;
+padding:70px 40px;
+flex-wrap:wrap;
 }
 
 .card{
-    width:250px;
-    padding:24px;
-    border-radius:22px;
-    background: linear-gradient(to bottom,#ffffff,#f5f7ef);
-    box-shadow:0 10px 22px rgba(0,0,0,0.10);
-    transition:0.3s;
-    border:1px solid #e2e6d8;
-    text-align:center;
+width:340px;
+background:white;
+border-radius:25px;
+padding:35px 30px;
+text-align:center;
+box-shadow:0 15px 35px rgba(0,0,0,0.08);
+transition:all 0.4s ease;
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:6px;
+background:linear-gradient(to right,#2f5f2b,#7aa874);
 }
 
 .card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 16px 30px rgba(0,0,0,0.15);
+transform:translateY(-8px);
+box-shadow:0 20px 45px rgba(0,0,0,0.12);
+}
+
+/* ICON BULAT AESTHETIC */
+.icon-box{
+width:60px;
+height:60px;
+margin:0 auto 15px auto;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:26px;
+background:#eaf3e3;
 }
 
 .card h3{
-    margin-top:10px;
+font-size:18px;
+margin-bottom:10px;
+color:#1f3a2e;
 }
 
-.icon{
-    font-size:30px;
+.card p{
+font-size:14px;
+line-height:1.6;
+color:#4a5c50;
+margin:0;
 }
 
-/* MEDIA */
 .welcome{
-    background:white;
-    width:65%;
-    margin:40px auto;
-    padding:32px;
-    border-radius:20px;
-    box-shadow:0 12px 30px rgba(0,0,0,0.12);
-    text-align:center;
+background:white;width:65%;margin:40px auto;padding:32px;
+border-radius:20px;box-shadow:0 12px 30px rgba(0,0,0,0.12);
+text-align:center;
 }
 
-/* BUTTON KEMBALI */
-.back-btn{
-    display:inline-block;
-    margin-top:25px;
-    padding:10px 20px;
-    background:#0b5d1e;
-    color:white;
-    text-decoration:none;
-    border-radius:20px;
-    font-size:14px;
-    transition:0.3s;
-}
-
-.back-btn:hover{
-    background:#2f5f2b;
-}
-
-/* FOOTER */
 .footer{
-    background:linear-gradient(to right,#0b5d1e,#4f7f49);
-    color:white;
-    padding:40px 20px;
-    margin-top:50px;
-    font-size:14px;
+background:linear-gradient(to right,#0b5d1e,#4f7f49);
+color:white;padding:40px 20px;margin-top:50px;font-size:14px;
 }
+.footer-content{display:flex;flex-wrap:wrap;justify-content:space-around;gap:30px;}
+.footer a{color:#eaf3e3;text-decoration:none;}
+.footer a:hover{text-decoration:underline;}
 
-.footer-content{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:space-around;
-    gap:30px;
-}
-
-.footer a{
-    color:#eaf3e3;
-    text-decoration:none;
-}
-
-.footer a:hover{
-    text-decoration:underline;
-}
-
-/* FEEDBACK */
 .feedback-btn{
-    position:fixed;
-    bottom:30px;
-    right:30px;
-    background:linear-gradient(135deg,#0b5d1e,#7aa874);
-    color:white;
-    padding:14px 22px;
-    border-radius:30px;
-    text-decoration:none;
-    font-size:14px;
-    font-weight:500;
-    box-shadow:0 10px 22px rgba(0,0,0,0.25);
-    transition:0.3s;
+position:fixed;bottom:30px;right:30px;
+background:linear-gradient(135deg,#0b5d1e,#7aa874);
+color:white;padding:14px 22px;border-radius:30px;
+text-decoration:none;font-size:14px;font-weight:500;
+box-shadow:0 10px 22px rgba(0,0,0,0.25);
+transition:0.3s;
+}
+.feedback-btn:hover{transform:scale(1.1);}
+
+/* ===== MEDIA SECTION SCHOOL AESTHETIC ===== */
+
+.media-section{
+padding:80px 40px;
+background:linear-gradient(to bottom,#f4f8f2,#e8f0e3);
+text-align:center;
 }
 
-.feedback-btn:hover{
-    transform:scale(1.1);
+.media-title{
+font-size:28px;
+margin-bottom:50px;
+color:#1f3a2e;
+position:relative;
 }
 
+.media-title::after{
+content:"";
+width:80px;
+height:4px;
+background:#2f5f2b;
+display:block;
+margin:15px auto 0;
+border-radius:10px;
+}
+
+.media-wrapper{
+display:flex;
+justify-content:center;
+gap:50px;
+flex-wrap:wrap;
+}
+
+.media-card{
+width:420px;
+background:white;
+padding:35px;
+border-radius:25px;
+box-shadow:0 15px 35px rgba(0,0,0,0.08);
+transition:0.4s ease;
+text-align:center;
+position:relative;
+}
+
+.media-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,0.12);
+}
+
+.media-card h3{
+margin-bottom:10px;
+color:#2f5f2b;
+}
+
+.media-card p{
+font-size:14px;
+margin-bottom:20px;
+color:#4a5c50;
+}
+
+audio, video{
+width:100%;
+border-radius:15px;
+}
+
+.audio-card::before,
+.video-card::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:6px;
+border-radius:25px 25px 0 0;
+}
+
+.audio-card::before{
+background:#7aa874;
+}
+
+.video-card::before{
+background:#2f5f2b;
+}
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <div class="navbar">
-    <div class="logo-area">
-        <img src="logo.png" alt="Logo">
-        <h2>LUMORA LIBRARY</h2>
-    </div>
-
-    <ul>
-        <li><a href="#beranda">Beranda</a></li>
-        <li><a href="profil.html" target="_blank">Profil</a></li>
-        <li><a href="layanan.html" target="_blank">Layanan</a></li>
-        <li><a href="#koleksi">Koleksi</a></li>
-        <li><a href="#media">Media</a></li>
-        <li><a href="tentang.html" target="_blank">Tentang</a></li>
-        <li><a href="login.html" target="_blank">Login</a></li>
-        <li><a href="daftar.html" target="_blank">Daftar</a></li>
-    </ul>
+<div class="logo-area">
+<img src="logo.png" alt="Logo">
+<h2>ARUNIKA PUSTAKA</h2>
 </div>
+
+<ul>
+<li><a href="#beranda">Beranda</a></li>
+
+<li>
+<a href="#">Profil</a>
+<div class="dropdown">
+<a href="profil.html" target="_blank">Profil</a>
+<a href="profil.html#visi" target="_blank">Visi & Misi</a>
+</div>
+</li>
+
+<!-- LAYANAN SUDAH DIARAHKAN KE FILE layanan.html -->
+<li>
+<a href="#">Layanan</a>
+<div class="dropdown">
+<a href="layanan.html#terbaru" target="_blank">Koleksi Terbaru</a>
+<a href="layanan.html#pelajaran" target="_blank">Buku Pelajaran</a>
+<a href="layanan.html#peminjaman" target="_blank">Peminjaman</a>
+<a href="layanan.html#pengembalian" target="_blank">Pengembalian</a>
+<a href="layanan.html#digital" target="_blank">Unduhan Digital</a>
+</div>
+</li>
+
+<li>
+<a href="#">Koleksi</a>
+<div class="dropdown">
+<a href="#koleksi">Koleksi Fiksi</a>
+<a href="#koleksi">Koleksi Non Fiksi</a>
+<a href="#koleksi">Koleksi Terbitan Berseri</a>
+</div>
+</li>
+<li><a href="#media">Media</a></li>
+<li>
+<a href="#">Tentang</a>
+<div class="dropdown">
+<a href="tentang.html#profil" target="_blank">Profil Singkat</a>
+<a href="tentang.html#pendidikan" target="_blank">Riwayat Pendidikan</a>
+<a href="tentang.html#keahlian" target="_blank">Keahlian</a>
+<a href="tentang.html#visi" target="_blank">Visi Pengembangan</a>
+<a href="tentang.html#kontak" target="_blank">Kontak Pribadi</a>
+</div>
+</li>
+<li><a href="login.html" target="_blank">Login</a></li>
+<li><a href="daftar.html" target="_blank">Daftar</a></li>
+</ul>
+</div>
+
+<div id="main-content">
 
 <!-- HERO -->
 <div id="beranda" class="hero">
-    <h1>SELAMAT DATANG DI LUMORA LIBRARY</h1>
+    <h1>SELAMAT DATANG DI ARUNIKA PUSTAKA</h1>
     <p class="hero-subtitle">
         Pusat literasi digital berbasis Web OPAC yang mempermudah akses informasi dan penelusuran koleksi perpustakaan.
     </p>
 </div>
 
-<!-- KOLEKSI -->
 <div id="koleksi" class="section-title">KOLEKSI BUKU</div>
 
 <div class="cards">
-    <div class="card">
-        <div class="icon">📘</div>
-        <h3>Katalog Buku</h3>
-        <p>Kumpulan koleksi buku tersusun rapi dan sistematis sehingga pengguna dapat menemukan bacaan dengan cepat.</p>
-    </div>
 
-    <div class="card">
-        <div class="icon">📗</div>
-        <h3>Peminjaman</h3>
-        <p>Seluruh aktivitas peminjaman tercatat dan dapat dipantau dengan jelas.</p>
-    </div>
+  <div class="card">
+    <div class="icon-box">📘</div>
+    <h3>Koleksi Fiksi</h3>
+    <p>Cerita inspiratif dan imajinatif yang menyenangkan serta memperkaya wawasan siswa.</p>
+  </div>
 
-    <div class="card">
-        <div class="icon">📕</div>
-        <h3>Layanan Literasi</h3>
-        <p>Mendukung peningkatan kemampuan belajar dan minat membaca pengguna.</p>
-    </div>
+  <div class="card">
+    <div class="icon-box">📗</div>
+    <h3>Koleksi Non Fiksi</h3>
+    <p>Buku edukatif dari berbagai bidang ilmu untuk mendukung pembelajaran di sekolah.</p>
+  </div>
 
-    <div class="card">
-        <div class="icon">📙</div>
-        <h3>Akses Informasi</h3>
-        <p>Informasi perpustakaan dapat diakses melalui berbagai media digital.</p>
-    </div>
+  <div class="card">
+    <div class="icon-box">📕</div>
+    <h3>Terbitan Berseri</h3>
+    <p>Majalah dan jurnal ringan berisi informasi terbaru yang mudah dipahami siswa.</p>
+  </div>
+
 </div>
 
-<!-- MEDIA -->
-<div id="media" class="welcome">
-    <h2>AUDIO & VIDEO KOLEKSI</h2>
+<div id="media" class="media-section">
 
-    <audio controls style="width:80%; margin:15px 0;">
+  <h2 class="media-title">Audio & Video Koleksi</h2>
+
+  <div class="media-wrapper">
+
+    <!-- AUDIO -->
+    <div class="media-card audio-card">
+      <h3>🎧 Audio Edukasi</h3>
+      <p>Rekaman pembelajaran dan cerita inspiratif untuk siswa.</p>
+      <audio controls>
         <source src="LesungPipi_Audio.mp3" type="audio/mp3">
-    </audio>
+      </audio>
+    </div>
 
-    <video controls width="80%" style="border-radius:18px; margin-top:15px;">
+    <!-- VIDEO -->
+    <div class="media-card video-card">
+      <h3>🎬 Video Edukasi</h3>
+      <p>Tayangan pembelajaran visual yang menarik dan mudah dipahami.</p>
+      <video controls>
         <source src="BelajarWeb.mp4" type="video/mp4">
-    </video>
+      </video>
+    </div>
 
-    <br>
-    <a href="#beranda" class="back-btn">⬅ Kembali ke Menu Utama</a>
+  </div>
+
 </div>
 
-<!-- FOOTER tetap sama -->
+</div>
+
 <div class="footer">
-    <div class="footer-content">
-        <div>
-            <h3>Tentang</h3>
-            <p><a href="cv.html" target="_blank">Curriculum Vitae Pemilik</a></p>
-            <p><a href="https://www.youtube.com" target="_blank">YouTube</a></p>
-        </div>
-
-        <div>
-            <h3>Kontak</h3>
-            <p>📍 Medan, Sumatera Utara</p>
-            <p>📧 dwiw59866@gmail.com</p>
-            <p>📞 083857736265</p>
-            <p><a href="https://www.instagram.com" target="_blank">Instagram</a></p>
-        </div>
-
-        <div>
-            <h3>Jam Operasional Layanan</h3>
-            <p>Senin-Jumat : 08:00-19:00 WIB</p>
-            <p>Sabtu : 09:00-17:00 WIB</p>
-            <p>Minggu & Libur Nasional : Tutup</p>
-        </div>
-    </div>
+<div class="footer-content">
+<div>
+<h3>Tentang</h3>
+<p><a href="cv.html" target="_blank">Curriculum Vitae Pemilik</a></p>
+<p><a href="https://www.youtube.com" target="_blank">YouTube</a></p>
+</div>
+<div>
+<h3>Kontak</h3>
+<p>📍 Medan, Sumatera Utara</p>
+<p>📧 dwiw59866@gmail.com</p>
+<p>📞 083857736265</p>
+<p><a href="https://www.instagram.com" target="_blank">Instagram</a></p>
+</div>
+<div>
+<h3>Jam Operasional Layanan</h3>
+<p>Senin-Jumat : 08:00-19:00 WIB</p>
+<p>Sabtu : 09:00-17:00 WIB</p>
+<p>Minggu & Libur Nasional : Tutup</p>
+</div>
+</div>
 </div>
 
 <a href="feedback.html" target="_blank" class="feedback-btn">💬 Feedback</a>
