@@ -7,111 +7,111 @@
 <style>
 body{
     margin:0;
+    font-family:'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#0f4c2c,#4f7f49,#9ac7a2);
     height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    font-family:'Segoe UI', sans-serif;
-    background:linear-gradient(to bottom,#eef5ec,#e3ecd9);
 }
-
-/* BACK BUTTON */
-.back{
-    position:absolute;
+/* BACK BUTTON (SAMA DENGAN LAYANAN.HTML) */
+.back-button{
+    position:fixed;
     top:25px;
-    left:30px;
-    font-size:22px;
-    text-decoration:none;
-    color:#0b5d1e;
-    font-weight:bold;
-    transition:0.3s;
-}
-.back:hover{
-    transform:translateX(-5px);
-}
-
-/* LOGIN BOX */
-.box{
-    width:360px;
+    left:10px; /* digeser lebih kiri */
     background:white;
-    padding:36px;
-    border-radius:22px;
-    box-shadow:0 14px 32px rgba(0,0,0,0.15);
+    color:#2f5f2b;
+    padding:8px 16px;
+    border-radius:30px;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:500;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    transition:0.3s ease;
+    z-index:1000;
+}
+
+.back-button:hover{
+    background:#2f5f2b;
+    color:white;
+    transform:translateY(-3px);
+}
+
+.login-box{
+    background:rgba(255,255,255,0.95);
+    width:340px;
+    padding:40px 30px;
+    border-radius:25px;
+    box-shadow:0 20px 45px rgba(0,0,0,0.25);
     text-align:center;
+    backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,0.3);
 }
 
-.box h2{
-    margin-top:0;
-    color:#2e5b3f;
+.login-box h2{
+    margin-bottom:20px;
+    color:#1f3a2e;
 }
 
-input{
+.login-box input{
     width:100%;
-    padding:12px;
-    margin:10px 0;
-    border-radius:14px;
-    border:1px solid #ccd7c8;
+    padding:10px;
+    margin:8px 0;
+    border-radius:8px;
+    border:1px solid #ccc;
     font-size:14px;
-    outline:none;
 }
 
-input:focus{
-    border-color:#0b5d1e;
-}
-
-/* BUTTON */
-button{
+.login-box button{
     width:100%;
     padding:12px;
-    margin-top:12px;
-    border:none;
-    border-radius:20px;
     background:linear-gradient(to right,#0b5d1e,#4f7f49);
     color:white;
-    font-size:15px;
+    border:none;
+    border-radius:12px;
+    font-size:13px;
     cursor:pointer;
+    margin-top:2px;
     transition:0.3s;
 }
 
-button:hover{
-    transform:scale(1.05);
+.login-box button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
 }
 
-/* REGISTER CTA */
-.register{
-    margin-top:18px;
-    font-size:14px;
-}
-
-.register a{
-    text-decoration:none;
+.daftar-link{
     color:#0b5d1e;
-    font-weight:bold;
+    font-weight:600;
+    text-decoration:none;
 }
 
-.register a:hover{
+.daftar-link:hover{
     text-decoration:underline;
+    color:#4f7f49;
 }
 </style>
+
+<script>
+function login(){
+    // login sederhana (tanpa database)
+    window.location.href = "index.html";
+}
+</script>
+
 </head>
 
 <body>
 
-<a href="index.html" class="back">←</a>
+<a href="index.html" class="back-button">← Kembali</a>
 
-<div class="box">
-    <h2>Login Akun</h2>
-
-    <form>
-        <input type="text" placeholder="Nama Pengguna" required>
-        <input type="password" placeholder="Password" required>
-        <button type="submit">Login</button>
-    </form>
-
-    <div class="register">
-        Belum punya akun?
-        <a href="daftar.html">Daftar</a>
-    </div>
+<div class="login-box">
+    <h2>Login Perpustakaan</h2>
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button onclick="login()">Masuk</button>
+    <p>Perpustakaan Arunika Pustaka</p>
+	<p>Belum Punya Akun? <a href="daftar.html" class="daftar-link">Daftar</a></p>
 </div>
 
 </body>
