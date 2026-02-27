@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Layanan - Arunika Pustaka</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* GLOBAL */
+*{
+    font-family:'Poppins', sans-serif;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:linear-gradient(to bottom,#eef5ec,#e3ecd9);
+    color:#1f3a2e;
+}
+
+.back-button{
+    position:fixed;
+    top:25px;
+    left:10px; /* digeser lebih ke kiri */
+    background:white;
+    color:#2f5f2b;
+    padding:8px 16px; /* sedikit diperkecil agar lebih ringan */
+    border-radius:30px;
+    text-decoration:none;
+    font-size:13px; /* sedikit lebih kecil */
+    font-weight:500;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    transition:0.3s ease;
+    z-index:1000;
+}
+
+.back-button:hover{
+    background:#2f5f2b;
+    color:white;
+    transform:translateY(-3px);
+}
+
+/* HEADER */
+.header{
+    background:linear-gradient(to right,#063d14,#2f5f2b);
+    color:white;
+    padding:40px 20px;
+    text-align:center;
+}
+
+.header h1{
+    font-size:36px;
+}
+
+/* CONTAINER */
+.container{
+    width:85%;
+    margin:40px auto;
+}
+
+/* CARD LAYANAN */
+.layanan-box{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    margin-bottom:35px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.1);
+    transition:0.3s;
+    border-left:8px solid #f4c430;
+}
+
+.layanan-box:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+.layanan-box h2{
+    margin-bottom:15px;
+    color:#0b5d1e;
+}
+
+.layanan-box p{
+    line-height:1.8;
+    font-size:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Tombol kembali versi baru -->
+<a href="index.html" class="back-button">← Kembali ke Beranda</a>
+
+<div class="header">
+    <h1>LAYANAN ARUNIKA PUSTAKA</h1>
+</div>
+
+<div class="container">
+
+    <div id="terbaru" class="layanan-box">
+        <h2>Koleksi Terbaru</h2>
+        <p>
+        Arunika Pustaka secara rutin menghadirkan koleksi buku terbaru dari berbagai bidang ilmu. 
+        Koleksi ini dipilih secara selektif untuk memastikan pengguna mendapatkan referensi 
+        yang relevan, mutakhir, dan berkualitas tinggi guna mendukung kebutuhan akademik maupun pengembangan diri.
+        </p>
+    </div>
+
+    <div id="pelajaran" class="layanan-box">
+        <h2>Buku Pelajaran</h2>
+        <p>
+        Tersedia berbagai buku pelajaran dari tingkat dasar hingga lanjutan yang dapat dimanfaatkan 
+        sebagai sumber belajar utama. Koleksi ini disusun sistematis agar memudahkan pengguna 
+        dalam menemukan materi pembelajaran sesuai kebutuhan kurikulum dan bidang studi.
+        </p>
+    </div>
+
+    <div id="peminjaman" class="layanan-box">
+        <h2>Peminjaman</h2>
+        <p>
+        Layanan peminjaman buku dilakukan secara terstruktur dan tercatat dengan baik melalui sistem digital. 
+        Pengguna dapat meminjam koleksi dengan prosedur yang mudah, cepat, dan transparan 
+        demi mendukung aktivitas literasi yang berkelanjutan.
+        </p>
+    </div>
+
+    <div id="pengembalian" class="layanan-box">
+        <h2>Pengembalian</h2>
+        <p>
+        Proses pengembalian buku dirancang praktis dan efisien untuk menjaga ketertiban sirkulasi koleksi. 
+        Sistem pengingat pengembalian membantu pengguna menghindari keterlambatan 
+        serta memastikan koleksi dapat digunakan kembali oleh pemustaka lainnya.
+        </p>
+    </div>
+
+    <div id="digital" class="layanan-box">
+        <h2>Unduhan Digital</h2>
+        <p>
+        Selain koleksi fisik, Arunika Pustaka menyediakan layanan unduhan digital berupa e-book 
+        dan materi pembelajaran elektronik. Layanan ini memungkinkan akses informasi 
+        secara fleksibel kapan saja dan di mana saja melalui perangkat digital.
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
