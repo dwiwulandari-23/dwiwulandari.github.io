@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daftar Anggota - Pustaka Arunika</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#f5f7fb,#eef3ff);
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px;
+}
+
+.register-box{
+width:100%;
+max-width:520px;
+background:white;
+padding:35px;
+border-radius:22px;
+box-shadow:0 20px 45px rgba(0,0,0,0.12);
+}
+
+.register-box h1{
+text-align:center;
+color:#1a2a44;
+margin-bottom:10px;
+}
+
+.register-box p{
+text-align:center;
+color:#666;
+font-size:14px;
+margin-bottom:25px;
+line-height:1.8;
+}
+
+.input-group{
+margin-bottom:16px;
+}
+
+.input-group label{
+display:block;
+margin-bottom:7px;
+font-size:14px;
+font-weight:600;
+color:#1a2a44;
+}
+
+.input-group input{
+width:100%;
+padding:14px 16px;
+border:1px solid #dfe5f1;
+border-radius:14px;
+outline:none;
+font-size:14px;
+background:#f9fbff;
+}
+
+.btn{
+width:100%;
+padding:14px;
+border:none;
+border-radius:30px;
+background:linear-gradient(45deg,#ff9f43,#ff7f00);
+color:white;
+font-size:15px;
+font-weight:600;
+cursor:pointer;
+margin-top:10px;
+}
+
+.extra{
+margin-top:18px;
+font-size:14px;
+color:#666;
+text-align:center;
+}
+
+.extra a{
+color:#ff7f00;
+text-decoration:none;
+font-weight:600;
+}
+</style>
+</head>
+<body>
+
+<div class="register-box">
+<h1>Daftar Anggota</h1>
+<p>Isi formulir berikut untuk menjadi anggota Pustaka Arunika.</p>
+
+<form>
+<div class="input-group">
+<label>Nama Lengkap</label>
+<input type="text" placeholder="Masukkan nama lengkap">
+</div>
+
+<div class="input-group">
+<label>Email</label>
+<input type="email" placeholder="Masukkan email">
+</div>
+
+<div class="input-group">
+<label>Nomor Induk / Username</label>
+<input type="text" placeholder="Masukkan username">
+</div>
+
+<div class="input-group">
+<label>Password</label>
+<input type="password" placeholder="Masukkan password">
+</div>
+
+<div class="input-group">
+<label>Konfirmasi Password</label>
+<input type="password" placeholder="Ulangi password">
+</div>
+
+<button type="submit" class="btn">Daftar Sekarang</button>
+</form>
+
+<div class="extra">
+Sudah punya akun? <a href="login.html">Login</a>
+</div>
+</div>
+
+</body>
+</html>
