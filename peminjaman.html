@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Peminjaman - Pustaka Arunika</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#f7f9fc;
+color:#333;
+}
+
+.title,
+.hero h1,
+nav h2{
+font-family:'Playfair Display',serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+nav{
+background:#1a2a44;
+height:59px;
+padding:0 7%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+color:white;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 4px 12px rgba(0,0,0,0.2);
+}
+
+nav h2{
+font-size:22px;
+font-weight:700;
+letter-spacing:1px;
+background:linear-gradient(45deg,#ff9f43,#ffd166,#ffffff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+text-shadow:0 0 10px rgba(255,159,67,0.6);
+transition:0.4s;
+cursor:pointer;
+white-space:nowrap;
+margin-right:40px;
+}
+
+nav h2:hover{
+transform:scale(1.05);
+text-shadow:0 0 15px rgba(255,159,67,1);
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+margin-left:20px;
+margin-right:auto;
+padding:0;
+}
+
+nav ul li{
+display:flex;
+align-items:center;
+position:relative;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-size:14px;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+color:#ff9f43;
+}
+
+.dropdown{
+position:relative;
+}
+
+.dropdown-menu{
+position:absolute;
+top:100%;
+left:0;
+background:white;
+border-radius:12px;
+padding:10px 0;
+min-width:210px;
+opacity:0;
+visibility:hidden;
+transform:translateY(10px);
+box-shadow:0 12px 30px rgba(0,0,0,0.18);
+transition:0.3s ease;
+z-index:999;
+}
+
+.dropdown-menu li{
+list-style:none;
+}
+
+.dropdown-menu li a{
+display:block;
+padding:12px 20px;
+color:#1a2a44;
+font-size:14px;
+text-decoration:none;
+transition:0.25s;
+border-left:3px solid transparent;
+}
+
+.dropdown-menu li a:hover{
+background:linear-gradient(90deg,#f5f7ff,#ffffff);
+color:#ff9f43;
+border-left:3px solid #ff9f43;
+padding-left:25px;
+}
+
+.dropdown:hover .dropdown-menu{
+opacity:1;
+visibility:visible;
+transform:translateY(0);
+}
+
+.dropdown > a{
+display:flex;
+align-items:center;
+gap:5px;
+}
+
+.dropdown > a::after{
+content:"▾";
+font-size:11px;
+color:#ff9f43;
+}
+
+.search-bar{
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(8px);
+border-radius:30px;
+padding:4px 8px;
+width:180px;
+border:1px solid rgba(255,255,255,0.2);
+display:flex;
+align-items:center;
+gap:8px;
+transition:0.4s;
+}
+
+.search-bar input{
+background:transparent;
+border:none;
+outline:none;
+color:white;
+font-size:12px;
+width:120px;
+}
+
+.search-bar input::placeholder{
+color:rgba(255,255,255,0.7);
+}
+
+.search-bar button{
+width:28px;
+height:28px;
+border:none;
+background:linear-gradient(45deg,#ff9f43,#ff7f00);
+border-radius:50%;
+color:white;
+cursor:pointer;
+font-size:12px;
+box-shadow:0 3px 8px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+.search-bar button:hover{
+transform:scale(1.1);
+}
+
+.nav-btn{
+background:transparent;
+border:none;
+color:white;
+font-size:14px;
+cursor:pointer;
+padding:6px 12px;
+transition:0.3s;
+}
+
+.nav-btn:hover{
+color:#ff9f43;
+transform:scale(1.05);
+}
+
+.hero{
+height:50vh;
+background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.7)),
+url("https://images.unsplash.com/photo-1507842217343-583bb7270b66");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero h1{
+font-size:60px;
+font-weight:700;
+letter-spacing:2px;
+line-height:1.3;
+background:linear-gradient(45deg,#ffffff,#ffd166,#ff9f43);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+text-shadow:0 5px 20px rgba(0,0,0,0.4);
+animation:judulHero 3s ease-in-out infinite alternate;
+margin-bottom:15px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+line-height:1.8;
+font-size:18px;
+}
+
+@keyframes judulHero{
+from{transform:translateY(0px);}
+to{transform:translateY(-8px);}
+}
+
+.section{
+padding:90px 10%;
+}
+
+.title{
+text-align:center;
+font-size:34px;
+margin-bottom:50px;
+color:#1a2a44;
+}
+
+.title::after{
+content:"";
+width:80px;
+height:4px;
+background:#ff9f43;
+display:block;
+margin:10px auto;
+border-radius:3px;
+}
+
+.about-modern{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+margin-bottom:50px;
+background:linear-gradient(135deg,#ffffff,#f8f9ff);
+padding:45px;
+border-radius:20px;
+box-shadow:0 20px 50px rgba(0,0,0,0.08);
+position:relative;
+overflow:hidden;
+}
+
+.about-modern::before{
+content:"";
+position:absolute;
+width:200px;
+height:200px;
+background:linear-gradient(45deg,#ff9f43,#ffd166);
+border-radius:50%;
+top:-60px;
+right:-60px;
+opacity:0.15;
+}
+
+.about-modern::after{
+content:"";
+position:absolute;
+width:150px;
+height:150px;
+background:#4f6df5;
+border-radius:50%;
+bottom:-60px;
+left:-60px;
+opacity:0.1;
+}
+
+.about-img img{
+width:100%;
+border-radius:18px;
+box-shadow:0 25px 50px rgba(0,0,0,0.25);
+transition:0.4s;
+}
+
+.about-img img:hover{
+transform:scale(1.04) rotate(1deg);
+}
+
+.about-paragraph{
+text-align:justify;
+line-height:1.9;
+font-size:16px;
+color:#444;
+margin-bottom:15px;
+}
+
+.about-features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:20px;
+}
+
+.feature-card{
+background:white;
+padding:25px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+transition:0.4s;
+position:relative;
+overflow:hidden;
+}
+
+.feature-card::before{
+content:"";
+position:absolute;
+height:5px;
+width:100%;
+background:linear-gradient(90deg,#ff9f43,#ffd166);
+top:0;
+left:0;
+}
+
+.feature-card i{
+font-size:32px;
+color:#ff9f43;
+margin-bottom:10px;
+}
+
+.feature-card h4{
+color:#1a2a44;
+margin-bottom:8px;
+}
+
+.feature-card p, .feature-card li{
+font-size:14px;
+color:#555;
+line-height:1.8;
+}
+
+.feature-card ul{
+text-align:left;
+padding-left:18px;
+margin:10px 0 0;
+}
+
+.action-box{
+background:white;
+padding:35px;
+border-radius:20px;
+box-shadow:0 15px 35px rgba(0,0,0,0.08);
+text-align:center;
+margin-top:40px;
+}
+
+.btn-main{
+display:inline-block;
+margin-top:18px;
+padding:14px 30px;
+background:linear-gradient(45deg,#ff9f43,#ff7f00);
+color:white;
+text-decoration:none;
+border-radius:30px;
+font-weight:600;
+box-shadow:0 8px 20px rgba(255,127,0,0.25);
+transition:0.3s;
+}
+
+.btn-main:hover{
+transform:translateY(-3px) scale(1.04);
+}
+
+footer{
+background:#1a2a44;
+color:white;
+padding:60px 10%;
+margin-top:40px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:40px;
+}
+
+footer h3{
+margin-bottom:15px;
+color:#ff9f43;
+}
+
+footer ul{
+list-style:none;
+padding:0;
+}
+
+footer ul li{
+margin-bottom:8px;
+}
+
+.footer-bottom{
+text-align:center;
+margin-top:30px;
+border-top:1px solid rgba(255,255,255,0.3);
+padding-top:15px;
+font-size:14px;
+}
+
+@media(max-width:900px){
+.about-modern{
+grid-template-columns:1fr;
+}
+nav{
+flex-wrap:wrap;
+height:auto;
+padding:15px 7%;
+}
+nav ul{
+flex-wrap:wrap;
+margin:0;
+}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<h2 onclick="window.location.href='index.html'">📚 Pustaka Arunika</h2>
+
+<ul>
+<li><a href="index.html#beranda">Beranda</a></li>
+
+<li class="dropdown">
+<a href="profil.html">Profil</a>
+<ul class="dropdown-menu">
+<li><a href="profil.html">Profil Perpustakaan</a></li>
+<li><a href="profil.html#visi">Visi & Misi</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a href="koleksi.html">Koleksi</a>
+<ul class="dropdown-menu">
+<li><a href="koleksi-buku.html">Koleksi Buku</a></li>
+<li><a href="koleksi-digital.html">Koleksi Digital</a></li>
+<li><a href="referensi.html">Referensi Akademik</a></li>
+<li><a href="masa-depan.html">Sudut Masa Depan</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a href="layanan.html">Layanan</a>
+<ul class="dropdown-menu">
+<li><a href="peminjaman.html">Peminjaman</a></li>
+<li><a href="pengembalian.html">Pengembalian</a></li>
+<li><a href="keanggotaan.html">Keanggotaan</a></li>
+</ul>
+</li>
+
+<li><a href="index.html#event">Events</a></li>
+<li><a href="#">Kontak</a></li>
+</ul>
+
+<div class="search-bar">
+<input type="text" id="searchInput" placeholder="Cari buku...">
+<button onclick="searchBook()">🔍</button>
+</div>
+
+<button onclick="darkMode()" class="nav-btn">🌙</button>
+<a href="login.html" class="nav-btn">login</a>
+
+</nav>
+<section class="hero">
+<div>
+<h1>Layanan Peminjaman</h1>
+<p>
+Informasi lengkap mengenai aturan, langkah peminjaman buku,
+serta kemudahan memulai proses peminjaman di Pustaka Arunika.
+</p>
+</div>
+</section>
+
+<section class="section">
+<h2 class="title">Informasi Peminjaman Buku</h2>
+
+<div class="about-modern">
+<div class="about-img">
+<img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353">
+</div>
+
+<div>
+<h3 style="color:#1a2a44; font-size:28px; margin-bottom:18px;">Pinjam Buku dengan Mudah dan Tertib</h3>
+<p class="about-paragraph">
+Layanan peminjaman buku di Pustaka Arunika dibuat untuk mendukung kebutuhan
+belajar siswa dengan proses yang sederhana. Anggota dapat memilih buku yang
+dibutuhkan, memeriksa ketersediaan koleksi, lalu melakukan peminjaman sesuai
+dengan ketentuan perpustakaan.
+</p>
+
+<p class="about-paragraph">
+Agar proses berjalan lancar, setiap peminjam diharapkan memahami aturan,
+jangka waktu peminjaman, dan menjaga kondisi buku selama dipinjam.
+</p>
+</div>
+</div>
+
+<div class="about-features">
+<div class="feature-card">
+<i class="fas fa-scale-balanced"></i>
+<h4>Aturan Peminjaman</h4>
+<ul>
+<li>Setiap anggota hanya dapat meminjam maksimal 2 buku.</li>
+<li>Masa peminjaman berlaku selama 7 hari.</li>
+<li>Buku yang dipinjam wajib dijaga kebersihan dan kondisinya.</li>
+<li>Tidak diperkenankan meminjam dengan menggunakan akun orang lain.</li>
+<li>Keterlambatan pengembalian dapat dikenakan denda sesuai ketentuan.</li>
+</ul>
+</div>
+
+<div class="feature-card">
+<i class="fas fa-list-check"></i>
+<h4>Cara Meminjam</h4>
+<ul>
+<li>Pilih buku yang ingin dipinjam dari halaman koleksi.</li>
+<li>Pastikan buku masih tersedia untuk dipinjam.</li>
+<li>Catat judul buku yang dipilih.</li>
+<li>Tunjukkan data anggota kepada petugas perpustakaan.</li>
+<li>Petugas akan memproses peminjaman dan mencatat tanggal kembali.</li>
+</ul>
+</div>
+
+<div class="feature-card">
+<i class="fas fa-circle-info"></i>
+<h4>Informasi Tambahan</h4>
+<ul>
+<li>Perpanjangan peminjaman dapat dilakukan jika buku tidak sedang dipesan anggota lain.</li>
+<li>Gunakan pembatas buku agar koleksi tetap rapi.</li>
+<li>Segera laporkan bila buku rusak sebelum dipinjam.</li>
+<li>Simpan bukti atau catatan tanggal pengembalian agar tidak terlambat.</li>
+</ul>
+</div>
+</div>
+
+<div class="action-box">
+<h3 style="color:#1a2a44; margin-bottom:10px;">Siap Meminjam Buku?</h3>
+<p style="color:#555; line-height:1.8;">
+Silakan mulai memilih koleksi buku yang ingin Anda pinjam dari katalog Pustaka Arunika.
+</p>
+<a href="koleksi-buku.html" class="btn-main">Mulai Meminjam</a>
+</div>
+</section>
+
+<footer>
+<div class="footer-grid">
+<div>
+<h3>Pustaka Arunika</h3>
+<p>Pusat literasi dan sumber belajar siswa.</p>
+</div>
+
+<div>
+<h3>Menu</h3>
+<ul>
+<li>Beranda</li>
+<li>Profil</li>
+<li>Koleksi</li>
+<li>Layanan</li>
+</ul>
+</div>
+
+<div>
+<h3>Layanan</h3>
+<ul>
+<li>Peminjaman Buku</li>
+<li>Pengembalian Buku</li>
+<li>Keanggotaan</li>
+</ul>
+</div>
+
+<div>
+<h3>Kontak</h3>
+<p>Email : pustakaarunika@email.com</p>
+<p>Telepon : 08xxxxxxxx</p>
+</div>
+</div>
+
+<div class="footer-bottom">
+© 2026 Pustaka Arunika
+</div>
+</footer>
+
+</body>
+</html>
