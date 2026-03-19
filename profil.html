@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Profil - Pustaka Arunika</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+
+body{
+font-family:'Poppins', sans-serif;
+}
+
+.hero h1{
+font-family:'Playfair Display', serif;
+}
+
+.section h2{
+font-family:'Playfair Display', serif;
+}
+
+.hero h1{
+line-height:1.2;
+}
+
+.title{
+font-family:'Playfair Display',serif;
+font-size:36px;
+text-align:center;
+margin-bottom:50px;
+color:#1a2a44;
+}
+
+.title::after{
+content:"";
+width:80px;
+height:4px;
+background:#ff9f43;
+display:block;
+margin:10px auto;
+border-radius:3px;
+}
+
+.about-modern{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,0.1);
+}
+
+.about-img img{
+width:100%;
+border-radius:15px;
+}
+
+.about-paragraph{
+line-height:1.9;
+color:#444;
+}
+
+.hero{
+height:50vh;
+background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)),
+url("https://images.unsplash.com/photo-1507842217343-583bb7270b66");
+background-size:cover;
+background-position:center;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+.hero h1{
+font-size:60px;
+font-weight:700;
+letter-spacing:2px;
+line-height:1.3;
+
+background:linear-gradient(45deg,#ffffff,#ffd166,#ff9f43);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+text-shadow:0 5px 20px rgba(0,0,0,0.4);
+
+/* animasi */
+animation:judulHero 2s infinite alternate;
+}
+
+@@keyframes judulHero{
+from{
+transform:translateY(0px);
+}
+to{
+transform:translateY(-8px);
+}
+}
+
+.hero p{
+font-size:20px;
+margin-top:15px;
+font-weight:400;
+letter-spacing:0.5px;
+}
+
+* LOGO */
+
+nav h2{
+font-size:20px;
+font-weight:700;
+letter-spacing:1px;
+white-space:nowrap;
+background:linear-gradient(45deg,#ff9f43,#ffd166,#ffffff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin-right:25px;
+}
+
+/* MENU */
+
+nav ul{
+display:flex;
+align-items:center;
+gap:22px;
+list-style:none;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-size:14px;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+color:#ff9f43;
+}
+nav{
+background:#1a2a44;
+height:59px;
+padding:0 7%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+color:white;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+nav h2{
+font-size:22px;
+font-family:'Playfair Display',serif;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+margin-left:20px;
+margin-right:auto;
+}
+
+nav ul li{
+display:flex;
+align-items:center;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+}
+
+/* ===== NAVBAR SEARCH AESTHETIC ===== */
+
+nav .search-bar{
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(8px);
+border-radius:30px;
+padding:4px 8px;
+width:180px;
+border:1px solid rgba(255,255,255,0.2);
+display:flex;
+align-items:center;
+gap:8px;
+transition:0.4s;
+}
+
+nav .search-bar input{
+background:transparent;
+border:none;
+outline:none;
+color:white;
+font-size:12px;
+width:120px;
+}
+
+nav .search-bar input::placeholder{
+color:rgba(255,255,255,0.7);
+}
+
+nav .search-bar button{
+width:28px;
+height:28px;
+border:none;
+background:linear-gradient(45deg,#ff9f43,#ff7f00);
+border-radius:50%;
+color:white;
+cursor:pointer;
+font-size:12px;
+box-shadow:0 3px 8px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+nav .search-bar button:hover{
+transform:scale(1.1);
+}
+.nav-btn{
+background:transparent;
+border:none;
+color:white;
+font-size:14px;
+cursor:pointer;
+padding:6px 12px;
+}
+
+/* JUDUL PERPUSTAKAAN NAVBAR */
+
+nav h2{
+font-size:22px;
+font-weight:700;
+letter-spacing:1px;
+background:linear-gradient(45deg,#ff9f43,#ffd166,#ffffff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+text-shadow:0 0 10px rgba(255,159,67,0.6);
+transition:0.4s;
+cursor:pointer;
+}
+
+nav h2:hover{
+transform:scale(1.05);
+text-shadow:0 0 15px rgba(255,159,67,1);
+}
+/* ===== ABOUT PERPUSTAKAAN MODERN STYLE ===== */
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+background:linear-gradient(135deg,#ffffff,#f6f8ff);
+padding:40px;
+border-radius:18px;
+box-shadow:0 15px 35px rgba(0,0,0,0.08);
+}
+
+.about img{
+border-radius:15px;
+box-shadow:0 15px 30px rgba(0,0,0,0.2);
+transition:0.4s;
+}
+
+.about img:hover{
+transform:scale(1.04);
+}
+
+.about-text{
+font-size:17px;
+line-height:1.9;
+color:#444;
+letter-spacing:0.3px;
+}
+
+.about-text::first-letter{
+font-size:38px;
+font-weight:700;
+color:#ff9f43;
+float:left;
+margin-right:8px;
+line-height:1;
+}
+
+.about-text br{
+margin-bottom:10px;
+}
+
+.about:hover{
+transform:translateY(-5px);
+transition:0.4s;
+}
+/* ===== ABOUT SECTION PREMIUM DESIGN ===== */
+
+.about-modern{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+margin-bottom:50px;
+background:linear-gradient(135deg,#ffffff,#f8f9ff);
+padding:45px;
+border-radius:20px;
+box-shadow:0 20px 50px rgba(0,0,0,0.08);
+position:relative;
+overflow:hidden;
+}
+
+/* dekorasi background */
+
+.about-modern::before{
+content:"";
+position:absolute;
+width:200px;
+height:200px;
+background:linear-gradient(45deg,#ff9f43,#ffd166);
+border-radius:50%;
+top:-60px;
+right:-60px;
+opacity:0.15;
+}
+
+.about-modern::after{
+content:"";
+position:absolute;
+width:150px;
+height:150px;
+background:#4f6df5;
+border-radius:50%;
+bottom:-60px;
+left:-60px;
+opacity:0.1;
+}
+
+.about-img img{
+width:100%;
+border-radius:18px;
+box-shadow:0 25px 50px rgba(0,0,0,0.25);
+transition:0.4s;
+}
+
+.about-img img:hover{
+transform:scale(1.04) rotate(1deg);
+}
+
+.about-heading{
+font-size:28px;
+color:#1a2a44;
+margin-bottom:18px;
+position:relative;
+}
+
+.about-heading::after{
+content:"";
+width:60px;
+height:4px;
+background:#ff9f43;
+display:block;
+margin-top:8px;
+border-radius:3px;
+}
+
+.about-paragraph{
+text-align:justify;
+line-height:1.9;
+font-size:16px;
+color:#444;
+margin-bottom:15px;
+}
+
+/* FOOTER */
+
+footer{
+background:#1a2a44;
+color:white;
+padding:60px 10%;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:40px;
+}
+
+footer h3{
+margin-bottom:15px;
+color:#ff9f43;
+}
+
+footer ul{
+list-style:none;
+}
+
+footer ul li{
+margin-bottom:8px;
+}
+
+.footer-bottom{
+text-align:center;
+margin-top:30px;
+border-top:1px solid rgba(255,255,255,0.3);
+padding-top:15px;
+font-size:14px;
+}
+
+/* DROPDOWN MENU PROFIL */
+
+.dropdown{
+position:relative;
+}
+
+.dropdown > a{
+padding:6px 10px;
+display:block;
+}
+
+.dropdown-menu{
+position:absolute;
+top:42px;
+left:0;
+background:white;
+border-radius:10px;
+padding:8px 0;
+display:none;
+min-width:190px;
+box-shadow:0 8px 25px rgba(0,0,0,0.15);
+z-index:1000;
+}
+
+.dropdown-menu li{
+list-style:none;
+}
+
+.dropdown-menu li a{
+display:block;
+padding:10px 18px;
+color:#1a2a44;
+font-size:14px;
+text-decoration:none;
+transition:0.25s;
+}
+
+.dropdown-menu li a:hover{
+background:#f2f5ff;
+color:#ff9f43;
+}
+
+.dropdown:hover .dropdown-menu{
+display:block;
+}
+/* DROPDOWN MENU */
+
+.dropdown{
+position:relative;
+}
+
+.dropdown-menu{
+position:absolute;
+top:100%;
+left:0;
+background:white;
+border-radius:12px;
+padding:10px 0;
+min-width:210px;
+
+opacity:0;
+visibility:hidden;
+transform:translateY(10px);
+
+box-shadow:0 12px 30px rgba(0,0,0,0.18);
+transition:0.3s ease;
+}
+
+.dropdown-menu li{
+list-style:none;
+}
+
+.dropdown-menu li a{
+display:block;
+padding:12px 20px;
+color:#1a2a44;
+font-size:14px;
+text-decoration:none;
+transition:0.25s;
+border-left:3px solid transparent;
+}
+
+.dropdown-menu li a:hover{
+background:linear-gradient(90deg,#f5f7ff,#ffffff);
+color:#ff9f43;
+border-left:3px solid #ff9f43;
+padding-left:25px;
+}
+
+.dropdown:hover .dropdown-menu{
+opacity:1;
+visibility:visible;
+transform:translateY(0);
+}
+
+.dropdown > a{
+display:flex;
+align-items:center;
+gap:5px;
+}
+
+.dropdown > a::after{
+content:"▾";
+font-size:11px;
+color:#ff9f43;
+}
+
+</style>
+</head>
+
+<body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+AOS.init({
+duration:1200
+});
+</script>
+
+<nav>
+
+<h2 onclick="window.location.href='index.html'">📚 Pustaka Arunika</h2>
+
+<ul>
+<li><a href="index.html#beranda">Beranda</a></li>
+
+<li class="dropdown">
+<a href="profil.html">Profil</a>
+<ul class="dropdown-menu">
+<li><a href="profil.html">Profil Perpustakaan</a></li>
+<li><a href="profil.html#visi">Visi & Misi</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a href="koleksi.html">Koleksi</a>
+<ul class="dropdown-menu">
+<li><a href="koleksi-buku.html">Koleksi Buku</a></li>
+<li><a href="koleksi-digital.html">Koleksi Digital</a></li>
+<li><a href="referensi.html">Referensi Akademik</a></li>
+<li><a href="masa-depan.html">Sudut Masa Depan</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a href="layanan.html">Layanan</a>
+<ul class="dropdown-menu">
+<li><a href="peminjaman.html">Peminjaman</a></li>
+<li><a href="pengembalian.html">Pengembalian</a></li>
+<li><a href="keanggotaan.html">Keanggotaan</a></li>
+</ul>
+</li>
+
+<li><a href="index.html#event">Events</a></li>
+<li><a href="#">Kontak</a></li>
+</ul>
+
+<div class="search-bar">
+<input type="text" id="searchInput" placeholder="Cari buku...">
+<button onclick="searchBook()">🔍</button>
+</div>
+
+<button onclick="darkMode()" class="nav-btn">🌙</button>
+<a href="login.html" class="nav-btn">login</a>
+
+</nav>
+
+<section class="hero">
+
+<h1>Profil <br> Perpustakaan</h1>
+<p>Mengenal lebih dekat Pustaka Arunika sebagai pusat literasi sekolah</p>
+
+</section>
+
+<section class="section">
+
+<h2 class="title">Profil Perpustakaan</h2>
+
+<div class="about-modern">
+
+<div class="about-img">
+<img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
+</div>
+
+<div>
+
+<p class="about-paragraph">
+Pustaka Arunika merupakan perpustakaan sekolah yang berfungsi sebagai
+pusat literasi, sumber belajar, serta ruang eksplorasi pengetahuan bagi
+para siswa. Perpustakaan ini dirancang dengan konsep modern agar siswa
+merasa nyaman untuk membaca, belajar, dan berdiskusi.
+</p>
+
+<p class="about-paragraph">
+Melalui koleksi buku yang beragam, kegiatan literasi, serta layanan
+informasi yang mudah diakses, Pustaka Arunika berkomitmen untuk
+meningkatkan budaya membaca dan mendukung proses pembelajaran di sekolah.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section" id="visi">
+
+<h2 class="title">Visi & Misi</h2>
+
+<div class="about-modern">
+
+<div class="about-img">
+<img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8">
+</div>
+
+<div>
+
+<h3>Visi</h3>
+
+<p class="about-paragraph">
+Menjadikan Pustaka Arunika sebagai pusat literasi modern yang
+mendorong budaya membaca, pembelajaran aktif, serta pengembangan
+pengetahuan siswa di era digital.
+</p>
+
+<h3>Misi</h3>
+
+<p class="about-paragraph">
+• Menyediakan koleksi buku yang berkualitas dan relevan.  
+• Meningkatkan minat baca siswa melalui program literasi.  
+• Menyediakan ruang belajar yang nyaman dan inspiratif.  
+• Mendukung kegiatan akademik serta pengembangan wawasan siswa.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h3>Pustaka Arunika</h3>
+<p>Pusat literasi dan sumber belajar siswa.</p>
+</div>
+
+<div>
+<h3>Menu</h3>
+<ul>
+<li>Beranda</li>
+<li>Profil</li>
+<li>Koleksi</li>
+<li>Layanan</li>
+</ul>
+</div>
+
+<div>
+<h3>Layanan</h3>
+<ul>
+<li>Peminjaman Buku</li>
+<li>Pengembalian Buku</li>
+<li>Referensi</li>
+</ul>
+</div>
+
+<div>
+<h3>Kontak</h3>
+<p>Email : pustakaarunika@email.com</p>
+<p>Telepon : 08xxxxxxxx</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 Pustaka Arunika
+</div>
+
+</footer>
+
+</body>
+</html>
