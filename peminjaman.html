@@ -8,8 +8,16 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<link rel="stylesheet" href="style.css">
 <style>
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
 body{
 margin:0;
 font-family:'Poppins',sans-serif;
@@ -87,6 +95,69 @@ nav ul li a:hover{
 color:#ff9f43;
 }
 
+.nav-btn{
+background:transparent;
+border:none;
+color:white;
+font-size:14px;
+cursor:pointer;
+padding:6px 12px;
+transition:0.3s;
+}
+
+.nav-btn:hover{
+color:#ff9f43;
+transform:scale(1.05);
+}
+
+/* DROPDOWN MENU PROFIL */
+
+.dropdown{
+position:relative;
+}
+
+.dropdown > a{
+padding:6px 10px;
+display:block;
+}
+
+.dropdown-menu{
+position:absolute;
+top:42px;
+left:0;
+background:white;
+border-radius:10px;
+padding:8px 0;
+display:none;
+min-width:190px;
+box-shadow:0 8px 25px rgba(0,0,0,0.15);
+z-index:1000;
+}
+
+.dropdown-menu li{
+list-style:none;
+}
+
+.dropdown-menu li a{
+display:block;
+padding:10px 18px;
+color:#1a2a44;
+font-size:14px;
+text-decoration:none;
+transition:0.25s;
+}
+
+.dropdown-menu li a:hover{
+background:#f2f5ff;
+color:#ff9f43;
+}
+
+.dropdown:hover .dropdown-menu{
+display:block;
+}
+
+/* DROPDOWN MENU */
+
 .dropdown{
 position:relative;
 }
@@ -99,12 +170,13 @@ background:white;
 border-radius:12px;
 padding:10px 0;
 min-width:210px;
+
 opacity:0;
 visibility:hidden;
 transform:translateY(10px);
+
 box-shadow:0 12px 30px rgba(0,0,0,0.18);
 transition:0.3s ease;
-z-index:999;
 }
 
 .dropdown-menu li{
@@ -189,24 +261,31 @@ transition:0.3s;
 transform:scale(1.1);
 }
 
-.nav-btn{
-background:transparent;
-border:none;
+nav a.nav-btn{
+padding:8px 18px;
+border-radius:25px;
+background:linear-gradient(45deg,#ff9f43,#ff7f00);
 color:white;
-font-size:14px;
-cursor:pointer;
-padding:6px 12px;
+font-weight:500;
+text-decoration:none;
+box-shadow:0 4px 12px rgba(0,0,0,0.3);
 transition:0.3s;
 }
 
-.nav-btn:hover{
-color:#ff9f43;
-transform:scale(1.05);
+nav a.nav-btn:hover{
+transform:translateY(-2px) scale(1.05);
+background:linear-gradient(45deg,#ff7f00,#ff9f43);
+}
+
+nav button.nav-btn{
+background:transparent;
+box-shadow:none;
+padding:6px 12px;
 }
 
 .hero{
-height:50vh;
-background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.7)),
+height:60vh;
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
 url("https://images.unsplash.com/photo-1507842217343-583bb7270b66");
 background-size:cover;
 background-position:center;
@@ -244,10 +323,10 @@ to{transform:translateY(-8px);}
 }
 
 .section{
-padding:90px 10%;
+padding:80px 10%;
 }
 
-.title{
+..title{
 text-align:center;
 font-size:34px;
 margin-bottom:50px;
@@ -330,13 +409,18 @@ margin-top:20px;
 
 .feature-card{
 background:white;
-padding:25px;
-border-radius:15px;
+padding:30px;
+border-radius:18px;
 text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
+box-shadow:0 15px 35px rgba(0,0,0,0.1);
 transition:0.4s;
 position:relative;
 overflow:hidden;
+}
+
+.feature-card:hover{
+transform:translateY(-10px);
+box-shadow:0 25px 45px rgba(0,0,0,0.15);
 }
 
 .feature-card::before{
@@ -447,6 +531,7 @@ flex-wrap:wrap;
 margin:0;
 }
 }
+
 </style>
 </head>
 
