@@ -13,8 +13,17 @@
 
 <style>
 
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
 body{
 font-family:'Poppins',sans-serif;
+background:#f7f9fc;
+color:#333;
 }
 
 .title,
@@ -37,35 +46,16 @@ letter-spacing:2px;
 /* LOGO */
 
 nav h2{
-font-size:20px;
+font-size:22px;
 font-weight:700;
 letter-spacing:1px;
-white-space:nowrap;
 background:linear-gradient(45deg,#ff9f43,#ffd166,#ffffff);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
-margin-right:25px;
+cursor:pointer;
+white-space:nowrap;
 }
 
-/* MENU */
-
-nav ul{
-display:flex;
-align-items:center;
-gap:22px;
-list-style:none;
-}
-
-nav ul li a{
-color:white;
-text-decoration:none;
-font-size:14px;
-transition:0.3s;
-}
-
-nav ul li a:hover{
-color:#ff9f43;
-}
 /* ===== NAVBAR SEARCH AESTHETIC ===== */
 
 nav .search-bar{
@@ -122,17 +112,17 @@ padding:6px 12px;
 /* HERO */
 
 .hero{
-height:50vh;
-background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)),
+height:60vh;
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
 url("https://images.unsplash.com/photo-1507842217343-583bb7270b66");
 background-size:cover;
 background-position:center;
 display:flex;
-flex-direction:column;
 align-items:center;
 justify-content:center;
 text-align:center;
 color:white;
+padding:20px;
 }
 
 .hero h1{
@@ -218,7 +208,7 @@ transform:translateY(-8px);
 /* SECTION */
 
 .section{
-padding:90px 10%;
+padding:80px 10%;
 }
 
 .title{
@@ -367,26 +357,13 @@ grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:40px;
 }
 
-footer h3{
-margin-bottom:15px;
-color:#ff9f43;
-}
-
-footer ul{
-list-style:none;
-}
-
-footer ul li{
-margin-bottom:8px;
-}
-
 .footer-bottom{
 text-align:center;
 margin-top:30px;
 border-top:1px solid rgba(255,255,255,0.3);
 padding-top:15px;
-font-size:14px;
 }
+
 /* SLIDER */
 
 .slider{
@@ -442,18 +419,12 @@ z-index:1000;
 box-shadow:0 4px 12px rgba(0,0,0,0.2);
 }
 
-nav h2{
-font-size:20px;
-white-space:nowrap;
-margin-right:40px;
-}
-
 nav ul{
 display:flex;
 list-style:none;
 gap:25px;
 margin-left:20px;
-margin-right:auto;
+flex:1;
 }
 
 nav ul li{
@@ -1102,6 +1073,23 @@ gap:5px;
 content:"▾";
 font-size:11px;
 color:#ff9f43;
+}
+
+/* ===== LOGIN BUTTON PREMIUM ===== */
+nav a.nav-btn{
+padding:8px 18px;
+border-radius:25px;
+background:linear-gradient(45deg,#ff9f43,#ff7f00);
+color:white;
+font-weight:500;
+text-decoration:none;
+box-shadow:0 4px 12px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+nav a.nav-btn:hover{
+transform:translateY(-2px) scale(1.05);
+background:linear-gradient(45deg,#ff7f00,#ff9f43);
 }
 
 </style>
