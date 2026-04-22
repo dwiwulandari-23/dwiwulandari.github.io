@@ -99,42 +99,119 @@ font-weight:600;
 <body>
 
 <div class="register-box">
-<h1>Daftar Anggota</h1>
-<p>Isi formulir berikut untuk menjadi anggota Pustaka Arunika.</p>
 
-<form>
+<h1>Daftar Anggota</h1>
+<p>Isi formulir berikut untuk menjadi bagian dari layanan Pustaka Arunika.</p>
+
+<!-- PANEL SUKSES (tersembunyi dulu) -->
+<div id="suksesBox" style="
+display:none;
+background:#e8fff1;
+border:1px solid #b7f5ce;
+padding:18px;
+border-radius:14px;
+margin-bottom:20px;
+text-align:center;
+">
+<h3 style="color:#1a7f4b;margin-bottom:8px;">🎉 Pendaftaran Berhasil!</h3>
+<p style="font-size:14px;color:#2e5f45;">
+Akun Anda sudah aktif. Anda akan diarahkan ke halaman login untuk masuk sebagai anggota.
+</p>
+</div>
+
+<form onsubmit="daftarAnggota(event)">
+
 <div class="input-group">
 <label>Nama Lengkap</label>
-<input type="text" placeholder="Masukkan nama lengkap">
+<input type="text" id="nama" placeholder="Masukkan nama lengkap">
 </div>
 
 <div class="input-group">
 <label>Email</label>
-<input type="email" placeholder="Masukkan email">
+<input type="email" id="email" placeholder="Masukkan email">
 </div>
 
 <div class="input-group">
 <label>Nomor Induk / Username</label>
-<input type="text" placeholder="Masukkan username">
+<input type="text" id="username" placeholder="Masukkan username">
 </div>
 
 <div class="input-group">
 <label>Password</label>
-<input type="password" placeholder="Masukkan password">
+<input type="password" id="password" placeholder="Masukkan password">
 </div>
 
 <div class="input-group">
 <label>Konfirmasi Password</label>
-<input type="password" placeholder="Ulangi password">
+<input type="password" id="konfirmasi" placeholder="Ulangi password">
 </div>
 
 <button type="submit" class="btn">Daftar Sekarang</button>
+
 </form>
 
+<div id="pesan" style="margin-top:15px;font-weight:600;text-align:center;"></div>
+
 <div class="extra">
-Sudah punya akun? <a href="login.html">Login</a>
-</div>
+Sudah punya akun? <a href="login.html">Login di sini</a>
 </div>
 
+</div>
+
+<script>
+function daftarAnggota(e){
+    e.preventDefault();
+
+    let nama = document.getElementById("nama").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let username = document.getElementById("username").value.trim();
+    let password = document.getElementById("password").value.trim();
+    let konfirmasi = document.getElementById("konfirmasi").value.trim();
+    let pesan = document.getElementById("pesan");
+
+    // Validasi
+    if(!nama || !email || !username || !password || !konfirmasi){
+        pesan.innerHTML = "Semua data wajib diisi!";
+        pesan.style.color = "red";
+        return;
+    }
+
+    if(password !== konfirmasi){
+        pesan.innerHTML = "Konfirmasi password tidak sama!";
+        pesan.style.color = "red";
+        return;
+    }
+
+    if(localStorage.getItem(email)){
+        pesan.innerHTML = "Email sudah terdaftar, silakan login.";
+        pesan.style.color = "orange";
+        return;
+    }
+
+    // Data anggota
+    let anggota = {
+        id: "AGT" + Date.now(),
+        nama: nama,
+        email: email,
+        username: username,
+        password: password,
+        tanggalDaftar: new Date().toLocaleDateString()
+    };
+
+    // Simpan ke LocalStorage
+    localStorage.setItem(email, JSON.stringify(anggota));
+
+    pesan.innerHTML = "Selamat! Anda resmi menjadi anggota Pustaka Arunika 🎉";
+document.getElementById("suksesBox").style.display = "block";
+
+    // Kosongkan form
+    document.querySelector("form").reset();
+
+    // Arahkan ke login setelah 2 detik
+    setTimeout(()=>{
+        window.location.href = "login.html";
+    },2000);
+}
+</script>
 </body>
 </html>
