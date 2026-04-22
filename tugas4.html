@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tugas 4 - Manajemen Koleksi Buku</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6fb;
+    margin:30px;
+}
+
+h1{
+    color:#3f6db5;
+}
+
+.form-area{
+    background:#eef3fb;
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:20px;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.form-area input{
+    padding:8px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+button{
+    padding:8px 14px;
+    background:#3f6db5;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#2f5597;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+th{
+    background:#3f6db5;
+    color:white;
+    padding:10px;
+}
+
+td{
+    border:1px solid #ddd;
+    padding:8px;
+}
+
+.hapus{
+    color:red;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.search-box{
+    margin-bottom:15px;
+}
+.search-box input{
+    padding:8px;
+    width:300px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+</style>
+</head>
+<body>
+
+<h1>Manajemen Koleksi Buku</h1>
+
+<div class="form-area">
+    <input type="text" id="judul" placeholder="Judul Buku">
+    <input type="text" id="pengarang" placeholder="Pengarang">
+    <input type="text" id="penerbit" placeholder="Penerbit">
+    <input type="number" id="tahun" placeholder="Tahun">
+    <button onclick="tambahBuku()">SIMPAN BUKU</button>
+</div>
+
+<div class="search-box">
+    <input type="text" id="cari" placeholder="Cari Judul / Pengarang / Penerbit / Tahun..." onkeyup="cariBuku()">
+</div>
+
+<table id="tabelBuku">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Judul</th>
+            <th>Pengarang</th>
+            <th>Penerbit</th>
+            <th>Tahun</th>
+            <th>Aksi</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<script>
+let dataBuku = [
+    {judul:"Bumi Manusia", pengarang:"Pramoedya Ananta Toer", penerbit:"Hasta Mitra", tahun:"1980"},
+    {judul:"Negeri 5 Menara", pengarang:"Ahmad Fuadi", penerbit:"Gramedia", tahun:"2009"},
+    {judul:"Laskar Pelangi", pengarang:"Andrea Hirata", penerbit:"Bentang Pustaka", tahun:"2005"},
+    {judul:"Perahu Kertas", pengarang:"Dewi Lestari", penerbit:"Bentang Pustaka", tahun:"2009"}
+];
+
+function tampilkanBuku(list){
+    let tbody = document.querySelector("#tabelBuku tbody");
+    tbody.innerHTML = "";
+    list.forEach((buku, index)=>{
+        tbody.innerHTML += `
+        <tr>
+            <td>${index+1}</td>
+            <td>${buku.judul}</td>
+            <td>${buku.pengarang}</td>
+            <td>${buku.penerbit}</td>
+            <td>${buku.tahun}</td>
+            <td><span class="hapus" onclick="hapusBuku(${index})">Hapus</span></td>
+        </tr>`;
+    });
+}
+
+function tambahBuku(){
+    let judul = document.getElementById("judul").value;
+    let pengarang = document.getElementById("pengarang").value;
+    let penerbit = document.getElementById("penerbit").value;
+    let tahun = document.getElementById("tahun").value;
+
+    if(judul && pengarang && penerbit && tahun){
+        dataBuku.push({judul,pengarang,penerbit,tahun});
+        tampilkanBuku(dataBuku);
+    }
+}
+
+function hapusBuku(index){
+    dataBuku.splice(index,1);
+    tampilkanBuku(dataBuku);
+}
+
+function cariBuku(){
+    let keyword = document.getElementById("cari").value.toLowerCase();
+    let hasil = dataBuku.filter(b =>
+        b.judul.toLowerCase().includes(keyword) ||
+        b.pengarang.toLowerCase().includes(keyword) ||
+        b.penerbit.toLowerCase().includes(keyword) ||
+        b.tahun.includes(keyword)
+    );
+    tampilkanBuku(hasil);
+}
+
+tampilkanBuku(dataBuku);
+</script>
+
+</body>
+</html>
