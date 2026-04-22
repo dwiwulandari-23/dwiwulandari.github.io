@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tugas 1 - Looping 1000 Hari</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6fb;
+}
+
+.box{
+    width:420px;
+    margin:40px;
+    background:#3f6db5;
+    color:white;
+    padding:20px;
+    border-radius:4px;
+    line-height:1.8;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box" id="hasil"></div>
+
+<script>
+for(let i = 1; i <= 1000; i++){
+    document.getElementById("hasil").innerHTML += 
+    i + ". Ini adalah hari ke " + i + " belajar PHP <br>";
+}
+</script>
+
+</body>
+</html>
