@@ -393,51 +393,6 @@ border-radius:6px;
 display:block;
 }
 
-
-/* Search */
-nav .search-bar{
-display:flex;
-align-items:center;
-gap:6px;
-background:rgba(255,255,255,0.12);
-border-radius:30px;
-padding:5px 10px;
-width:190px;
-}
-
-/* MIC */
-.mic-outside{
-width:30px;
-height:30px;
-border:none;
-border-radius:50%;
-background:#4f6df5;
-color:white;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-/* Search bar */
-nav .search-bar{
-display:flex;
-align-items:center;
-gap:25px;   (untuk geser tombol pencarian kekanan/kiri)
-background:rgba(255,255,255,0.12);
-border-radius:30px;
-padding:5x 10px;
-width:177px;   (lebar ukuran kotak pencarian)
-}
-
-nav .search-bar input{
-background:transparent;
-border:none;
-outline:none;
-color:white;
-font-size:12px;
-width:120px;
-}
-
 /* 🎤 MIC BIRU seperti kontak.html */
 .mic-outside{
 width:30px;
@@ -622,6 +577,120 @@ gap:10px;
 }
 
 
+/* ===== SEARCH + MIC MENYATU ===== */
+
+nav .search-bar{
+display:flex;
+align-items:center;
+gap:6px;
+background:rgba(255,255,255,0.12);
+border-radius:30px;
+padding:6px 10px;
+width:200px;
+border:1px solid rgba(255,255,255,0.25);
+backdrop-filter:blur(10px);
+}
+
+nav .search-bar input{
+flex:1;
+background:transparent;
+border:none;
+outline:none;
+color:white;
+font-size:13px;
+}
+
+/* Tombol Search */
+.search-btn{
+width:30px;
+height:30px;
+border:none;
+border-radius:50%;
+background:linear-gradient(45deg,#ff9f43,#ff7f00);
+color:white;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+transition:0.3s;
+}
+
+.search-btn:hover{
+transform:scale(1.1);
+}
+
+/* MIC SERAGAM SEMUA HALAMAN */
+.mic-btn{
+width:30px;
+height:30px;
+border:none;
+border-radius:50%;
+background:linear-gradient(45deg,#ff9f43,#ff7f00);
+color:white;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+transition:0.3s;
+}
+
+.mic-btn:hover{
+transform:scale(1.1);
+}
+
+.mic-btn.listening{
+background:linear-gradient(45deg,#ff4d4d,#ff7f7f);
+animation:pulseMic 1s infinite;
+}
+
+footer ul{
+list-style:none;
+padding:0;
+}
+
+footer ul li{
+margin:6px 0;
+}
+
+footer ul li a{
+color:white;
+text-decoration:none;
+font-size:14px;
+transition:0.3s;
+}
+
+footer ul li a:hover{
+color:#ff9f43;
+padding-left:6px;
+}
+
+/* Penanda panah kecil di footer */
+footer ul li a{
+position:relative;
+padding-left:18px;
+}
+
+footer ul li a::before{
+content:"›";
+position:absolute;
+left:0;
+top:50%;
+transform:translateY(-50%);
+font-size:16px;
+color:#ff9f43;
+transition:0.3s;
+}
+
+/* Efek saat hover */
+footer ul li a:hover::before{
+transform:translateY(-50%) translateX(4px);
+color:#ffffff;
+}
+
+footer ul li a:hover{
+padding-left:22px;
+}
+
 </style>
 </head>
 
@@ -681,17 +750,18 @@ duration:1200
 <div class="search-wrapper">
 
 <div class="search-bar">
+
 <input type="text" id="searchInput" placeholder="Cari buku...">
 
-<button onclick="searchBook()" title="Cari">
+<button onclick="searchBook()" title="Cari" class="search-btn">
 <i class="fas fa-search"></i>
 </button>
-</div>
 
-<!-- MIC DI KANAN -->
-<button onclick="startVoiceSearch()" id="micBtn" class="mic-outside" title="Voice Search">
+<button onclick="startVoiceSearch()" id="micBtn" class="mic-btn" title="Voice Search">
 <i class="fas fa-microphone"></i>
 </button>
+
+</div>
 
 </div>
 
@@ -773,19 +843,19 @@ masa berlaku keanggotaan, serta akses daftar dan login anggota.
 <div>
 <h3>Menu</h3>
 <ul>
-<li>Beranda</li>
-<li>Profil</li>
-<li>Koleksi</li>
-<li>Layanan</li>
+<li><a href="index.html#beranda">Beranda</a></li>
+<li><a href="profil.html">Profil</a></li>
+<li><a href="koleksi.html">Koleksi</a></li>
+<li><a href="layanan.html">Layanan</a></li>
 </ul>
 </div>
 
 <div>
 <h3>Layanan</h3>
 <ul>
-<li>Peminjaman Buku</li>
-<li>Pengembalian Buku</li>
-<li>Keanggotaan</li>
+<li><a href="peminjaman.html">Peminjaman Buku</a></li>
+<li><a href="pengembalian.html">Pengembalian Buku</a></li>
+<li><a href="referensi.html">Referensi</a></li>
 </ul>
 </div>
 
@@ -837,7 +907,7 @@ recognition.lang = "id-ID";
 recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 
-micBtn.classList.add("listening");
+micBtn.classList.remove("listening");
 recognition.start();
 
 recognition.onresult = function(event){
