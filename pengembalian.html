@@ -96,6 +96,129 @@ nav ul li a:hover{
 color:#ff9f43;
 }
 
+.nav-btn{
+background:transparent;
+border:none;
+color:white;
+font-size:14px;
+cursor:pointer;
+padding:6px 12px;
+transition:0.3s;
+}
+
+.nav-btn:hover{
+color:#ff9f43;
+transform:scale(1.05);
+}
+
+/* DROPDOWN MENU PROFIL */
+
+.dropdown{
+position:relative;
+}
+
+.dropdown > a{
+padding:6px 10px;
+display:block;
+}
+
+.dropdown-menu{
+position:absolute;
+top:42px;
+left:0;
+background:white;
+border-radius:10px;
+padding:8px 0;
+display:none;
+min-width:190px;
+box-shadow:0 8px 25px rgba(0,0,0,0.15);
+z-index:1000;
+}
+
+.dropdown-menu li{
+list-style:none;
+}
+
+.dropdown-menu li a{
+display:block;
+padding:10px 18px;
+color:#1a2a44;
+font-size:14px;
+text-decoration:none;
+transition:0.25s;
+}
+
+.dropdown-menu li a:hover{
+background:#f2f5ff;
+color:#ff9f43;
+}
+
+.dropdown:hover .dropdown-menu{
+display:block;
+}
+
+/* DROPDOWN MENU */
+
+.dropdown{
+position:relative;
+}
+
+.dropdown-menu{
+position:absolute;
+top:100%;
+left:0;
+background:white;
+border-radius:12px;
+padding:10px 0;
+min-width:210px;
+
+opacity:0;
+visibility:hidden;
+transform:translateY(10px);
+
+box-shadow:0 12px 30px rgba(0,0,0,0.18);
+transition:0.3s ease;
+}
+
+.dropdown-menu li{
+list-style:none;
+}
+
+.dropdown-menu li a{
+display:block;
+padding:12px 20px;
+color:#1a2a44;
+font-size:14px;
+text-decoration:none;
+transition:0.25s;
+border-left:3px solid transparent;
+}
+
+.dropdown-menu li a:hover{
+background:linear-gradient(90deg,#f5f7ff,#ffffff);
+color:#ff9f43;
+border-left:3px solid #ff9f43;
+padding-left:25px;
+}
+
+.dropdown:hover .dropdown-menu{
+opacity:1;
+visibility:visible;
+transform:translateY(0);
+}
+
+.dropdown > a{
+display:flex;
+align-items:center;
+gap:5px;
+}
+
+.dropdown > a::after{
+content:"▾";
+font-size:11px;
+color:#ff9f43;
+}
+
 .search-bar{
 background:rgba(255,255,255,0.15);
 backdrop-filter:blur(8px);
@@ -139,25 +262,32 @@ transition:0.3s;
 transform:scale(1.1);
 }
 
-.nav-btn{
-background:transparent;
-border:none;
+nav a.nav-btn{
+padding:8px 18px;
+border-radius:25px;
+background:linear-gradient(45deg,#ff9f43,#ff7f00);
 color:white;
-font-size:14px;
-cursor:pointer;
-padding:6px 12px;
+font-weight:500;
+text-decoration:none;
+box-shadow:0 4px 12px rgba(0,0,0,0.3);
 transition:0.3s;
 }
 
-.nav-btn:hover{
-color:#ff9f43;
-transform:scale(1.05);
+nav a.nav-btn:hover{
+transform:translateY(-2px) scale(1.05);
+background:linear-gradient(45deg,#ff7f00,#ff9f43);
+}
+
+nav button.nav-btn{
+background:transparent;
+box-shadow:none;
+padding:6px 12px;
 }
 
 .hero{
 height:60vh;
 background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-url("https://images.unsplash.com/photo-1497633762265-9d179a990aa6");
+url("https://images.unsplash.com/photo-1507842217343-583bb7270b66");
 background-size:cover;
 background-position:center;
 display:flex;
@@ -197,7 +327,7 @@ to{transform:translateY(-8px);}
 padding:80px 10%;
 }
 
-.title{
+..title{
 text-align:center;
 font-size:34px;
 margin-bottom:50px;
@@ -214,21 +344,84 @@ margin:10px auto;
 border-radius:3px;
 }
 
+.about-modern{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+margin-bottom:50px;
+background:linear-gradient(135deg,#ffffff,#f8f9ff);
+padding:45px;
+border-radius:20px;
+box-shadow:0 20px 50px rgba(0,0,0,0.08);
+position:relative;
+overflow:hidden;
+}
+
+.about-modern::before{
+content:"";
+position:absolute;
+width:200px;
+height:200px;
+background:linear-gradient(45deg,#ff9f43,#ffd166);
+border-radius:50%;
+top:-60px;
+right:-60px;
+opacity:0.15;
+}
+
+.about-modern::after{
+content:"";
+position:absolute;
+width:150px;
+height:150px;
+background:#4f6df5;
+border-radius:50%;
+bottom:-60px;
+left:-60px;
+opacity:0.1;
+}
+
+.about-img img{
+width:100%;
+border-radius:18px;
+box-shadow:0 25px 50px rgba(0,0,0,0.25);
+transition:0.4s;
+}
+
+.about-img img:hover{
+transform:scale(1.04) rotate(1deg);
+}
+
+.about-paragraph{
+text-align:justify;
+line-height:1.9;
+font-size:16px;
+color:#444;
+margin-bottom:15px;
+}
+
 .about-features{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:25px;
 margin-top:20px;
 }
 
 .feature-card{
 background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
+padding:30px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 15px 35px rgba(0,0,0,0.1);
 transition:0.4s;
 position:relative;
 overflow:hidden;
+}
+
+.feature-card:hover{
+transform:translateY(-10px);
+box-shadow:0 25px 45px rgba(0,0,0,0.15);
 }
 
 .feature-card::before{
@@ -245,20 +438,99 @@ left:0;
 font-size:32px;
 color:#ff9f43;
 margin-bottom:10px;
-display:block;
-text-align:center;
 }
 
 .feature-card h4{
 color:#1a2a44;
 margin-bottom:8px;
-text-align:center;
+}
+
+.feature-card p, .feature-card li{
+font-size:14px;
+color:#555;
+line-height:1.8;
 }
 
 .feature-card ul{
+text-align:left;
 padding-left:18px;
-line-height:1.8;
-color:#555;
+margin:10px 0 0;
+}
+
+.action-box{
+background:white;
+padding:35px;
+border-radius:20px;
+box-shadow:0 15px 35px rgba(0,0,0,0.08);
+text-align:center;
+margin-top:40px;
+}
+
+.btn-main{
+display:inline-block;
+margin-top:18px;
+padding:14px 30px;
+background:linear-gradient(45deg,#ff9f43,#ff7f00);
+color:white;
+text-decoration:none;
+border-radius:30px;
+font-weight:600;
+box-shadow:0 8px 20px rgba(255,127,0,0.25);
+transition:0.3s;
+}
+
+.btn-main:hover{
+transform:translateY(-3px) scale(1.04);
+}
+
+footer{
+background:#1a2a44;
+color:white;
+padding:60px 10%;
+margin-top:40px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:40px;
+}
+
+footer h3{
+margin-bottom:15px;
+color:#ff9f43;
+}
+
+footer ul{
+list-style:none;
+padding:0;
+}
+
+footer ul li{
+margin-bottom:8px;
+}
+
+.footer-bottom{
+text-align:center;
+margin-top:30px;
+border-top:1px solid rgba(255,255,255,0.3);
+padding-top:15px;
+font-size:14px;
+}
+
+@media(max-width:900px){
+.about-modern{
+grid-template-columns:1fr;
+}
+nav{
+flex-wrap:wrap;
+height:auto;
+padding:15px 7%;
+}
+nav ul{
+flex-wrap:wrap;
+margin:0;
+}
 }
 
 .calculator-box{
@@ -335,69 +607,6 @@ text-align:center;
 margin-top:20px;
 }
 
-footer{
-background:#1a2a44;
-color:white;
-padding:60px 10%;
-margin-top:60px;
-}
-
-.footer-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:40px;
-}
-
-footer h3{
-margin-bottom:15px;
-color:#ff9f43;
-}
-
-footer ul{
-list-style:none;
-padding:0;
-}
-
-footer ul li{
-margin-bottom:8px;
-}
-
-.footer-bottom{
-text-align:center;
-margin-top:30px;
-border-top:1px solid rgba(255,255,255,0.3);
-padding-top:15px;
-font-size:14px;
-}
-
-@media(max-width:900px){
-nav{
-flex-wrap:wrap;
-height:auto;
-padding:15px 7%;
-}
-nav ul{
-flex-wrap:wrap;
-margin:0;
-}
-}
-
-nav a.nav-btn{
-padding:8px 18px;
-border-radius:25px;
-background:linear-gradient(45deg,#ff9f43,#ff7f00);
-color:white;
-font-weight:500;
-text-decoration:none;
-box-shadow:0 4px 12px rgba(0,0,0,0.3);
-transition:0.3s;
-}
-
-nav a.nav-btn:hover{
-transform:translateY(-2px) scale(1.05);
-background:linear-gradient(45deg,#ff7f00,#ff9f43);
-}
-
 /* ===== NAVBAR FIX SESUAI GAMBAR ===== */
 
 nav{
@@ -430,6 +639,14 @@ border-radius:6px;
 display:block;
 }
 
+/* Menu kiri */
+nav ul{
+display:flex;
+align-items:center;
+gap:20px;
+list-style:none;
+margin-left:25px;
+}
 
 /* Search */
 nav .search-bar{
@@ -455,15 +672,39 @@ align-items:center;
 justify-content:center;
 }
 
+/* Dropdown */
+.dropdown{ position:relative; }
+
+.dropdown-menu{
+position:absolute;
+top:100%;
+left:0;
+background:white;
+border-radius:10px;
+padding:8px 0;
+min-width:200px;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+display:none;
+}
+
+.dropdown:hover .dropdown-menu{
+display:block;
+}
+
+.dropdown-menu li a{
+color:#1a2a44;
+padding:10px 18px;
+}
+
 /* Search bar */
 nav .search-bar{
 display:flex;
 align-items:center;
-gap:28px;   (untuk geser tombol pencarian kekanan/kiri)
+gap:25px;   (untuk geser tombol pencarian kekanan/kiri)
 background:rgba(255,255,255,0.12);
 border-radius:30px;
 padding:5x 10px;
-width:198px;   (lebar ukuran kotak pencarian)
+width:196px;   (lebar ukuran kotak pencarian)
 }
 
 nav .search-bar input{
@@ -616,6 +857,15 @@ gap:10px;
     list-style:none;
 }
 
+.dropdown-menu li a{
+    display:block;
+    padding:13px 18px;
+    color:#1a2a44;
+    font-size:14px;
+    text-decoration:none;
+    transition:0.25s;
+}
+
 /* Hover aesthetic */
 .dropdown-menu li a:hover{
     background:linear-gradient(90deg,#fff4e6,#ffffff);
@@ -627,11 +877,11 @@ gap:10px;
 .dropdown-menu{
     position:absolute;
     top:48px;
-    left:50%;
+    left:18%;
     transform:translateX(-50%) translateY(10px);
     background:#ffffff;
     border-radius:14px;
-    padding:12px 40px;
+    padding:12px 0;
     min-width:230px;
     box-shadow:0 18px 40px rgba(0,0,0,0.18);
     z-index:999;
@@ -649,29 +899,53 @@ gap:10px;
     transform:translateX(-50%) translateY(0);
 }
 
-.dropdown-menu li a{
-    display:block;
-    padding:13px 18px;
-    color:#1a2a44;
-    font-size:14px;
-    text-decoration:none;
-    transition:0.25s;
+footer ul{
+list-style:none;
+padding:0;
 }
 
-/* Dropdown box */
-.dropdown-menu{
-    position:absolute;
-    top:48px;
-    left:18%;
-    transform:translateX(-50%) translateY(10px);
-    background:#ffffff;
-    border-radius:14px;
-    padding:12px 10px;
-    min-width:230px;
-    box-shadow:0 18px 40px rgba(0,0,0,0.18);
-    z-index:999;
-    border:1px solid #f1f1f1;
+footer ul li{
+margin:6px 0;
+}
 
+footer ul li a{
+color:white;
+text-decoration:none;
+font-size:14px;
+transition:0.3s;
+}
+
+footer ul li a:hover{
+color:#ff9f43;
+padding-left:6px;
+}
+
+/* Penanda panah kecil di footer */
+footer ul li a{
+position:relative;
+padding-left:18px;
+}
+
+footer ul li a::before{
+content:"›";
+position:absolute;
+left:0;
+top:50%;
+transform:translateY(-50%);
+font-size:16px;
+color:#ff9f43;
+transition:0.3s;
+}
+
+/* Efek saat hover */
+footer ul li a:hover::before{
+transform:translateY(-50%) translateX(4px);
+color:#ffffff;
+}
+
+footer ul li a:hover{
+padding-left:22px;
+}
 
 </style>
 </head>
@@ -729,20 +1003,22 @@ duration:1200
 </ul>
 </li>
 
+
 <div class="search-wrapper">
 
 <div class="search-bar">
+
 <input type="text" id="searchInput" placeholder="Cari buku...">
 
-<button onclick="searchBook()" title="Cari">
+<button onclick="searchBook()" title="Cari" class="search-btn">
 <i class="fas fa-search"></i>
 </button>
-</div>
 
-<!-- MIC DI KANAN -->
-<button onclick="startVoiceSearch()" id="micBtn" class="mic-outside" title="Voice Search">
+<button onclick="startVoiceSearch()" id="micBtn" class="mic-btn" title="Voice Search">
 <i class="fas fa-microphone"></i>
 </button>
+
+</div>
 
 </div>
 
@@ -829,19 +1105,19 @@ Hasil perhitungan denda akan muncul di sini.
 <div>
 <h3>Menu</h3>
 <ul>
-<li>Beranda</li>
-<li>Profil</li>
-<li>Koleksi</li>
-<li>Layanan</li>
+<li><a href="index.html#beranda">Beranda</a></li>
+<li><a href="profil.html">Profil</a></li>
+<li><a href="koleksi.html">Koleksi</a></li>
+<li><a href="layanan.html">Layanan</a></li>
 </ul>
 </div>
 
 <div>
 <h3>Layanan</h3>
 <ul>
-<li>Peminjaman Buku</li>
-<li>Pengembalian Buku</li>
-<li>Keanggotaan</li>
+<li><a href="peminjaman.html">Peminjaman Buku</a></li>
+<li><a href="pengembalian.html">Pengembalian Buku</a></li>
+<li><a href="referensi.html">Referensi</a></li>
 </ul>
 </div>
 
@@ -893,7 +1169,7 @@ recognition.lang = "id-ID";
 recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 
-micBtn.classList.add("listening");
+micBtn.classList.remove("listening");
 recognition.start();
 
 recognition.onresult = function(event){
@@ -926,8 +1202,37 @@ this.classList.toggle("active");
 
 });
 });
-</script>
 
+function hitungDenda(){
+
+let hari = document.getElementById("jumlahHari").value;
+let denda = document.getElementById("dendaPerHari").value;
+let hasilBox = document.getElementById("hasilDenda");
+
+// validasi jika kosong
+if(hari === "" || denda === ""){
+    hasilBox.innerHTML = "⚠️ Harap isi jumlah hari dan denda per hari terlebih dahulu.";
+    return;
+}
+
+// ubah ke angka
+hari = parseInt(hari);
+denda = parseInt(denda);
+
+// hitung total
+let total = hari * denda;
+
+// tampilkan hasil
+hasilBox.innerHTML = `
+<b>Rincian Perhitungan Denda:</b><br><br>
+Jumlah hari terlambat : <b>${hari} hari</b><br>
+Denda per hari : <b>Rp ${denda.toLocaleString()}</b><br><br>
+<b>Total Denda yang harus dibayar :<br>
+<span style="font-size:20px;color:#ff7f00;">Rp ${total.toLocaleString()}</span></b>
+`;
+
+}
+</script>
 </script>
 
 </body>
