@@ -1101,7 +1101,6 @@ background:linear-gradient(45deg,#ff7f00,#ff9f43);
 }
 
 
-
 /* WRAPPER SEARCH + MIC */
 .search-wrapper{
 display:flex;
@@ -1109,33 +1108,6 @@ align-items:center;
 gap:10px;
 }
 
-/* MIC DI LUAR */
-.mic-outside{
-width:40px;
-height:40px;
-border:none;
-border-radius:50%;
-background:linear-gradient(45deg,#4f6df5,#6a8cff);
-color:white;
-cursor:pointer;
-font-size:16px;
-display:flex;
-align-items:center;
-justify-content:center;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
-transition:0.3s;
-}
-
-/* HOVER */
-.mic-outside:hover{
-transform:scale(1.15);
-}
-
-/* SAAT AKTIF */
-.mic-outside.listening{
-background:linear-gradient(45deg,#ff4d4d,#ff7f7f);
-animation:pulseMic 1s infinite;
-}
 
 /* SEARCH BAR UPGRADE */
 nav .search-bar{
@@ -1177,33 +1149,6 @@ animation:blink 0.6s infinite;
 display:flex;
 align-items:center;
 gap:8px;
-}
-
-/* MIC MENYATU DENGAN DESAIN */
-.mic-outside{
-width:30px;
-height:30px;
-border:none;
-background:linear-gradient(45deg,#ff9f43,#ff7f00);
-border-radius:50%;
-color:white;
-cursor:pointer;
-font-size:13px;
-display:flex;
-align-items:center;
-justify-content:center;
-box-shadow:0 3px 8px rgba(0,0,0,0.3);
-transition:0.3s;
-}
-
-.mic-outside:hover{
-transform:scale(1.1);
-}
-
-/* SAAT MENDENGAR */
-.mic-outside.listening{
-background:linear-gradient(45deg,#ff4d4d,#ff7f7f);
-animation:pulseMic 1s infinite;
 }
 
 /* DETAIL EVENT (TERSEMBUNYI) */
@@ -1314,19 +1259,6 @@ background:rgba(255,255,255,0.12);
 border-radius:30px;
 padding:5px 10px;
 width:190px;
-}
-
-/* MIC */
-.mic-outside{
-width:30px;
-height:30px;
-border:none;
-border-radius:50%;
-background:#4f6df5;
-color:white;
-display:flex;
-align-items:center;
-justify-content:center;
 }
 
 /* Dropdown */
@@ -1556,7 +1488,156 @@ gap:10px;
     transform:translateX(-50%) translateY(0);
 }
 
+/* ===== SEARCH + MIC MENYATU ===== */
 
+nav .search-bar{
+display:flex;
+align-items:center;
+gap:6px;
+background:rgba(255,255,255,0.12);
+border-radius:30px;
+padding:6px 10px;
+width:220px;
+border:1px solid rgba(255,255,255,0.25);
+backdrop-filter:blur(10px);
+}
+
+nav .search-bar input{
+flex:1;
+background:transparent;
+border:none;
+outline:none;
+color:white;
+font-size:13px;
+}
+
+/* Tombol Search */
+.search-btn{
+width:30px;
+height:30px;
+border:none;
+border-radius:50%;
+background:linear-gradient(45deg,#ff9f43,#ff7f00);
+color:white;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+transition:0.3s;
+}
+
+.search-btn:hover{
+transform:scale(1.1);
+}
+
+/* Tombol Mic di dalam search */
+.mic-btn{
+width:30px;
+height:30px;
+border:none;
+border-radius:50%;
+background:#4f6df5;
+color:white;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+transition:0.3s;
+}
+
+.mic-btn:hover{
+transform:scale(1.1);
+background:#3b55d9;
+}
+
+/* Saat mic aktif */
+.mic-btn.listening{
+background:linear-gradient(45deg,#ff4d4d,#ff7f7f);
+animation:pulseMic 1s infinite;
+}
+
+/* Tombol Mic ORANGE konsisten seperti cv.html */
+.mic-btn{
+width:30px;
+height:30px;
+border:none;
+border-radius:50%;
+background:linear-gradient(45deg,#ff9f43,#ff7f00);
+color:white;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+transition:0.3s;
+}
+
+.mic-btn:hover{
+transform:scale(1.1);
+}
+
+.mic-btn.listening{
+background:linear-gradient(45deg,#ff4d4d,#ff7f7f);
+animation:pulseMic 1s infinite;
+}
+
+/* ===== FIX FINAL WARNA MIC ===== */
+#micBtn{
+background:linear-gradient(45deg,#ff9f43,#ff7f00) !important;
+color:white !important;
+}
+
+#micBtn.listening{
+background:linear-gradient(45deg,#ff4d4d,#ff7f7f) !important;
+animation:pulseMic 1s infinite;
+} 
+
+footer ul{
+list-style:none;
+padding:0;
+}
+
+footer ul li{
+margin:6px 0;
+}
+
+footer ul li a{
+color:white;
+text-decoration:none;
+font-size:14px;
+transition:0.3s;
+}
+
+footer ul li a:hover{
+color:#ff9f43;
+padding-left:6px;
+}
+
+/* Penanda panah kecil di footer */
+footer ul li a{
+position:relative;
+padding-left:18px;
+}
+
+footer ul li a::before{
+content:"›";
+position:absolute;
+left:0;
+top:50%;
+transform:translateY(-50%);
+font-size:16px;
+color:#ff9f43;
+transition:0.3s;
+}
+
+/* Efek saat hover */
+footer ul li a:hover::before{
+transform:translateY(-50%) translateX(4px);
+color:#ffffff;
+}
+
+footer ul li a:hover{
+padding-left:22px;
+}
 
 </style>
 </head>
@@ -1575,7 +1656,7 @@ duration:1200
 <h2 onclick="window.location.href='index.html'">📚 Pustaka Arunika</h2>
 
 <ul>
-<li><a href="#beranda">Beranda</a></li>
+<li><a href="index.html#beranda">Beranda</a></li>
 
 <li class="dropdown">
 <a href="profil.html">Profil</a>
@@ -1614,25 +1695,28 @@ duration:1200
 </ul>
 </li>
 
+
 <div class="search-wrapper">
 
 <div class="search-bar">
+
 <input type="text" id="searchInput" placeholder="Cari buku...">
 
-<button onclick="searchBook()" title="Cari">
+<button onclick="searchBook()" title="Cari" class="search-btn">
 <i class="fas fa-search"></i>
 </button>
-</div>
 
-<!-- MIC DI KANAN -->
-<button onclick="startVoiceSearch()" id="micBtn" class="mic-outside" title="Voice Search">
+<button onclick="startVoiceSearch()" id="micBtn" class="mic-btn" title="Voice Search">
 <i class="fas fa-microphone"></i>
 </button>
 
 </div>
 
+</div>
+
 <a href="login.html" class="nav-btn">login</a>
 </nav>
+
 
 <!-- HERO -->
 
@@ -2120,26 +2204,26 @@ Login
 <div>
 <h3>Menu</h3>
 <ul>
-<li>Beranda</li>
-<li>Profil</li>
-<li>Koleksi</li>
-<li>Layanan</li>
+<li><a href="index.html#beranda">Beranda</a></li>
+<li><a href="profil.html">Profil</a></li>
+<li><a href="koleksi.html">Koleksi</a></li>
+<li><a href="layanan.html">Layanan</a></li>
 </ul>
 </div>
 
 <div>
 <h3>Layanan</h3>
 <ul>
-<li>Peminjaman Buku</li>
-<li>Pengembalian Buku</li>
-<li>Referensi</li>
+<li><a href="peminjaman.html">Peminjaman Buku</a></li>
+<li><a href="pengembalian.html">Pengembalian Buku</a></li>
+<li><a href="referensi.html">Referensi</a></li>
 </ul>
 </div>
 
 <div>
 <h3>Kontak</h3>
 <p>Email : pustakaarunika@email.com</p>
-<p>Telepon : 08xxxxxxxx</p>
+<p>Telepon : 083857736265</p>
 </div>
 
 </div>
@@ -2185,7 +2269,7 @@ recognition.lang = "id-ID";
 recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 
-micBtn.classList.add("listening");
+micBtn.classList.remove("listening");
 recognition.start();
 
 recognition.onresult = function(event){
@@ -2224,6 +2308,8 @@ btn.addEventListener("click",function(e){
 e.stopPropagation();
 });
 });
+
+</script>
 </script>
 
 </script>
