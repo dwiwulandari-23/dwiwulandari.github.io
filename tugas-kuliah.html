@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tugas Pemrograman Website Perpustakaan</title>
+
+<style>
+body{
+    margin:0;
+    font-family: 'Poppins', sans-serif;
+    background:#f4f6fb;
+    color:#333;
+}
+
+/* HEADER */
+.header{
+    text-align:center;
+    padding:40px 20px 10px;
+}
+
+.header h1{
+    margin:0;
+    font-size:32px;
+    color:#1a2a44;
+}
+
+.header h2{
+    margin:10px 0;
+    font-weight:500;
+    color:#555;
+}
+
+.header p{
+    margin:5px 0 20px;
+    font-weight:600;
+}
+
+/* GRID TUGAS */
+.grid{
+    max-width:1000px;
+    margin:30px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    padding:0 20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    text-align:center;
+    cursor:pointer;
+    transition:0.3s;
+    border-top:6px solid #ff9f43;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 35px rgba(0,0,0,0.15);
+}
+
+.card h3{
+    margin:0;
+    font-size:18px;
+    color:#1a2a44;
+}
+
+/* AREA TAMPIL TUGAS */
+.viewer{
+    max-width:1100px;
+    margin:40px auto;
+    padding:0 20px;
+    display:none;
+}
+
+.viewer iframe{
+    width:100%;
+    height:500px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    background:white;
+}
+
+.back-btn{
+    margin-bottom:15px;
+    padding:10px 18px;
+    border:none;
+    border-radius:20px;
+    background:#1a2a44;
+    color:white;
+    cursor:pointer;
+}
+
+/* FOOTER */
+.footer{
+    text-align:center;
+    padding:40px 20px;
+    margin-top:60px;
+    background:#1a2a44;
+    color:white;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Tugas Pemrograman Website Perpustakaan</h1>
+    <h2>Mahasiswa Perpustakaan dan Sains Informasi</h2>
+    <p>Dwi Wulan Dari (230709023 / A)</p>
+</div>
+
+<div class="grid" id="menuTugas">
+
+    <div class="card" onclick="bukaTugas('tugas1.html')">
+        <h3>Tugas 1: Looping 1000 Hari</h3>
+    </div>
+
+    <div class="card" onclick="bukaTugas('tugas2.html')">
+        <h3>Tugas 2: Kalkulator Sederhana</h3>
+    </div>
+
+    <div class="card" onclick="bukaTugas('tugas3.html')">
+        <h3>Tugas 3: Logika Login</h3>
+    </div>
+
+    <div class="card" onclick="bukaTugas('tugas4.html')">
+        <h3>Tugas 4: Manajemen Database</h3>
+    </div>
+
+</div>
+
+<!-- AREA MENAMPILKAN FILE TUGAS -->
+<div class="viewer" id="viewer">
+    <button class="back-btn" onclick="kembali()">Kembali ke Halaman Awal</button>
+    <iframe id="frameTugas"></iframe>
+</div>
+
+<div class="footer">
+    Dosen Pengampu: Himma Dewiyana ST., M.Hum.
+</div>
+
+<script>
+function bukaTugas(file){
+    document.getElementById("frameTugas").src = file;
+    document.getElementById("viewer").style.display = "block";
+    document.getElementById("menuTugas").style.display = "none";
+}
+
+function kembali(){
+    document.getElementById("viewer").style.display = "none";
+    document.getElementById("menuTugas").style.display = "grid";
+}
+</script>
+
+</body>
+</html>
