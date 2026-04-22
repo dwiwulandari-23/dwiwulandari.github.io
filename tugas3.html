@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tugas 3 - Form Login</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6fb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.login-box{
+    width:400px;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.1);
+    border:2px solid #3f6db5;
+}
+
+h2{
+    text-align:center;
+    color:#3f6db5;
+    margin-bottom:25px;
+}
+
+label{
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin:10px 0 15px 0;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#3f6db5;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-size:15px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#2f5597;
+}
+
+.pesan{
+    margin-top:20px;
+    padding:12px;
+    border-radius:6px;
+    text-align:center;
+    font-weight:bold;
+    display:none;
+}
+
+.sukses{
+    background:#d4edda;
+    color:#155724;
+}
+
+.gagal{
+    background:#f8d7da;
+    color:#721c24;
+}
+
+.kosong{
+    background:#fff3cd;
+    color:#856404;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+    <h2>Form Login</h2>
+
+    <label>Username:</label>
+    <input type="text" id="username" placeholder="Ketik: admin">
+
+    <label>Password:</label>
+    <input type="password" id="password" placeholder="Ketik: 12345">
+
+    <button onclick="login()">MASUK</button>
+
+    <div id="pesan" class="pesan"></div>
+</div>
+
+<script>
+function login(){
+    let user = document.getElementById("username").value.trim();
+    let pass = document.getElementById("password").value.trim();
+    let pesan = document.getElementById("pesan");
+
+    pesan.style.display = "block";
+    pesan.className = "pesan";
+
+    if(user === "" || pass === ""){
+        pesan.classList.add("kosong");
+        pesan.innerHTML = "Input tidak lengkap! Username dan Password harus diisi.";
+    }
+    else if(user === "admin" && pass === "12345"){
+        pesan.classList.add("sukses");
+        pesan.innerHTML = "Login sukses! Username dan Password sesuai.";
+    }
+    else{
+        pesan.classList.add("gagal");
+        pesan.innerHTML = "Login gagal! Username atau Password salah.";
+    }
+}
+</script>
+
+</body>
+</html>
